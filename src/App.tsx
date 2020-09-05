@@ -35,10 +35,18 @@ function App() {
     },
     {
       id: '3',
-      value: 8,
+      value: 16,
       coord: {
         y: 0,
         x: 2
+      }
+    },
+    {
+      id: '4',
+      value: 16,
+      coord: {
+        y: 0,
+        x: 3
       }
     }
   ]);
@@ -48,8 +56,6 @@ function App() {
     const direction = getMoveDirection(event);
     if(direction) {
       const newGrid = move(direction, tiles);
-
-
 
       setTiles([...newGrid, generateTile(newGrid, gridSize)])
     }

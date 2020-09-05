@@ -22,6 +22,11 @@ export default function move(direction: Direction, grid: ITile[]) {
 
                 // The next tile has the same value so merged them
                 if (arr[i + 1]?.value === item.value) {
+                    // The 2nd relative tile is the same so the next tile will merge with that
+                    if(arr[i + 2]?.value === item.value) {
+                        return [...a, item]
+                    }
+
                     mergedIndexes.push(i);
                     newValue = item.value * 2;
                 }
