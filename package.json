@@ -67,7 +67,7 @@
     "workbox-webpack-plugin": "4.3.1"
   },
   "scripts": {
-    "start": "node scripts/start.js",
+    "start": "webpack-dev-server --config config/webpack.dev.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js"
   },
@@ -140,5 +140,14 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "@babel/polyfill": "^7.11.5",
+    "@types/uuid": "^8.3.0",
+    "node-sass": "^4.14.1",
+    "ts-loader": "^8.0.3",
+    "uuid": "^8.3.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-merge": "^5.1.3"
   }
 }
