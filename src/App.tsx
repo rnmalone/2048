@@ -1,5 +1,6 @@
 import React, {KeyboardEvent, useState} from 'react';
 import './App.css';
+import isEqual from 'lodash.isEqual';
 import {ITile} from "./@types/Tile";
 import {generateTile, getMoveDirection, move} from "./lib";
 import Grid from "./components/Grid";
@@ -54,9 +55,9 @@ function App() {
   const onKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
     const direction = getMoveDirection(event);
     if(direction) {
-      const newGrid = move(direction, tiles);
-      if(JSON.stringify(newGrid) !== JSON.stringify(tiles)) {
-        setTiles([...newGrid, generateTile(newGrid, gridSize)])
+      const newTiles = move(direction, tiles);
+      if(!isEqual(newTiles, tiles)) {
+        setTiles([...newTiles, generateTile(newTiles, gridSize)])
       }
     }
   };

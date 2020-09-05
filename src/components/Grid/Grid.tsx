@@ -3,7 +3,7 @@ import {IPosition, ITile} from '../../@types/Tile';
 
 import './Grid.scss';
 import Tile from "../Tile";
-import {TransitionGroup} from "react-transition-group";
+import {CSSTransition, TransitionGroup} from "react-transition-group";
 
 export interface IGrid {
     tiles: ITile[];
@@ -20,22 +20,28 @@ export default function Grid({ tiles }: IGrid) {
 
     return (
         <section>
-            {/*<TransitionGroup className="todo-list">*/}
+            <TransitionGroup className="todo-list">
                 {
                     tiles.map(({
                         coord,
                         value,
                         id
                     }) => (
-                        <Tile
-                            id={id}
+                        <CSSTransition
                             key={id}
-                            value={value}
-                            style={getTileStyle(coord)}
-                        />
+                            timeout={500}
+                            classNames="Tile"
+                        >
+                            <Tile
+                                id={id}
+                                key={id}
+                                value={value}
+                                style={getTileStyle(coord)}
+                            />
+                        </CSSTransition>
                     ))
                 }
-            {/*</TransitionGroup>*/}
+            </TransitionGroup>
         </section>
     )
 }

@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="95160301-fcac-420b-a797-b8772d1b05c8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Tile/Tile.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tile/Tile.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Grid/Grid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Grid/Grid.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Tile/Tile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tile/Tile.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
