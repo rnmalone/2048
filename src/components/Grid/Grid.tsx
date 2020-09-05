@@ -1,5 +1,5 @@
 import React from 'react';
-import { ITile } from '../../@types/Tile';
+import {IPosition, ITile} from '../../@types/Tile';
 
 import './Grid.scss';
 import Tile from "../Tile";
@@ -11,11 +11,11 @@ export interface IGrid {
 
 export default function Grid({ tiles }: IGrid) {
 
-    const getTileStyle = ([x, y]: number[]) => {
+    const getTileStyle = ({x, y}: IPosition) => {
         return {
             transform: `translate(${x * 100}px, ${y * 100}px)`
         }
-    }
+    };
 
     return (
         <section>

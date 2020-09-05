@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
-import uuid from 'uuid';
+import React, {KeyboardEvent, useState} from 'react';
 import './App.css';
 import {ITile} from "./@types/Tile";
-import {generateTile} from "./lib";
+import {generateTile, getMoveDirection, move} from "./lib";
 import Grid from "./components/Grid";
+import {Direction} from "./lib/getMoveDirection";
 
 function App() {
   const startGame = () => {
@@ -13,13 +13,59 @@ function App() {
     return [tile1, tile2]
   };
 
+
   const [gridSize, setGridSize] = useState(4);
-  const [tiles, setTiles] = useState<ITile[]>(startGame());
+  // const [tiles, setTiles] = useState<ITile[]>(startGame());
+  const [tiles, setTiles] = useState<ITile[]>([
+    {
+      id: '1',
+      value: 2,
+      coord: {
+        y: 0,
+        x: 0
+      }
+    },
+    {
+      id: '2',
+      value: 16,
+      coord: {
+        y: 0,
+        x: 1
+      }
+    },
+    {
+      id: '3',
+      value: 8,
+      coord: {
+        y: 0,
+        x: 2
+      }
+    }
+  ]);
+
+
+  const onKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    const direction = getMoveDirection(event);
+    if(direction) {
+      const newGrid = move(direction, tiles);
+
+
+
+      setTiles([...newGrid, generateTile(newGrid, gridSize)])
+    }
+  };
+
+  console.log(tiles)
 
 
   return (
-    <div className="App">
+    <div className="App" onKeyDown={onKeyDown} tabIndex={0}>
       <Grid tiles={tiles} gridSize={gridSize} />
+      <button onClick={() => {
+        const newGrid = move(Direction.Up, tiles)
+
+        setTiles(newGrid)
+      }}>ergggggg</button>
     </div>
   );
 }

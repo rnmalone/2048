@@ -1,5 +1,11 @@
+export interface IPosition {
+    x: number;
+    y: number
+}
+
 export interface ITile {
     id: string,
-    coord: number[]
+    coord: IPosition
     value: number;
+    merged?: boolean;
 }
