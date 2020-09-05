@@ -24,7 +24,7 @@ export default function move(direction: Direction, grid: ITile[]) {
                 // The next tile has the same value so merged them
                 if (arr[i + 1]?.value === item.value) {
                     // The 2nd relative tile is the same so the next tile will merge with that
-                    if(arr[i + 2]?.value === item.value && arr[i + 2]?.value !== item.value) {
+                    if(arr[i + 2]?.value === item.value && arr[i + 3]?.value !== item.value) {
                         return [...a, item]
                     }
 
@@ -40,7 +40,8 @@ export default function move(direction: Direction, grid: ITile[]) {
                         value: newValue
                     }
                 ]
-            }
+            };
+
             const reducedSet = direction === Direction.Up || direction === Direction.Left ?
                 [...set].reverse().reduce(reduceSet, []) :
                 [...set].reduce(reduceSet, []);
@@ -51,7 +52,7 @@ export default function move(direction: Direction, grid: ITile[]) {
                     ...item.coord,
                     [positionKey]: direction === Direction.Down || direction === Direction.Right ? (4 - arr.length) + i : i
                 }
-            })
+            });
 
             const shifted = direction === Direction.Up || direction === Direction.Left ? reducedSet.reverse().map(shift) : reducedSet.map(shift)
 
