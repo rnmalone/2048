@@ -19,7 +19,7 @@ function App() {
   // const [tiles, setTiles] = useState<ITile[]>([
   //   {
   //     id: '1',
-  //     value: 2,
+  //     value: 16,
   //     coord: {
   //       y: 0,
   //       x: 0
@@ -66,11 +66,6 @@ function App() {
   return (
     <div className="App" onKeyDown={onKeyDown} tabIndex={0}>
       <Grid tiles={tiles} gridSize={gridSize} />
-      <button onClick={() => {
-        const newGrid = move(Direction.Up, tiles)
-
-        setTiles(newGrid)
-      }}>ergggggg</button>
     </div>
   );
 }
