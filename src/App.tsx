@@ -13,7 +13,7 @@ function App() {
 
     return [tile1, tile2]
   };
-
+  const [score, setScore] = useState<number>(0);
   const [gridSize, setGridSize] = useState(4);
   const [tiles, setTiles] = useState<ITile[]>(startGame());
   // const [tiles, setTiles] = useState<ITile[]>([
@@ -55,7 +55,10 @@ function App() {
   const onKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
     const direction = getMoveDirection(event);
     if(direction) {
-      const newTiles = move(direction, tiles);
+      const { newTiles, scoreDelta } = move(direction, tiles);
+      if(scoreDelta) {
+        setScore((oldState) => oldState + scoreDelta)
+      }
       if(!isEqual(newTiles, tiles)) {
         setTiles([...newTiles, generateTile(newTiles, gridSize)])
       }
@@ -65,6 +68,7 @@ function App() {
 
   return (
     <div className="App" onKeyDown={onKeyDown} tabIndex={0}>
+      <h1>{score}</h1>
       <Grid tiles={tiles} gridSize={gridSize} />
     </div>
   );

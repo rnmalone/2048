@@ -3,9 +3,10 @@ import {Direction} from "./getMoveDirection";
 
 
 export default function move(direction: Direction, grid: ITile[]) {
+    let scoreDelta = 0;
     const positionKey: keyof IPosition = (direction === Direction.Up || direction === Direction.Down) ? 'y': 'x';
 
-    let newGrid: ITile[] = []
+    let newTiles: ITile[] = []
 
     for(let i = 0; i < 4; i++) {
         const set = grid.filter((item) => item.coord[positionKey === 'y' ? 'x' : 'y'] === i);
@@ -29,6 +30,7 @@ export default function move(direction: Direction, grid: ITile[]) {
 
                     mergedIndexes.push(i);
                     newValue = item.value * 2;
+                    scoreDelta += newValue;
                 }
 
                 return [
@@ -53,9 +55,9 @@ export default function move(direction: Direction, grid: ITile[]) {
 
             const shifted = direction === Direction.Up || direction === Direction.Left ? reducedSet.reverse().map(shift) : reducedSet.map(shift)
 
-            newGrid = [...newGrid, ...shifted]
+            newTiles = [...newTiles, ...shifted]
         }
     }
 
-    return newGrid
+    return { newTiles, scoreDelta }
 }
