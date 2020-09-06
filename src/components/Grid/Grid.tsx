@@ -48,7 +48,8 @@ export default function Grid({ tiles, colorPalette }: IGrid) {
                     tiles.map(({
                         coord,
                         value,
-                        id
+                        id,
+                        toRemove
                     }) => (
                         <CSSTransition
                             key={id}
@@ -60,7 +61,8 @@ export default function Grid({ tiles, colorPalette }: IGrid) {
                                 id={id}
                                 key={id}
                                 value={value}
-                                style={getTileStyle(coord)}
+                                toRemove={toRemove}
+                                {...coord}
                             />
                         </CSSTransition>
                     ))

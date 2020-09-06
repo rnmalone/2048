@@ -11,14 +11,14 @@
   }
   &-enter-active {
     opacity: 1;
-    transition: opacity 200ms ease-in;
+    transition: opacity 200ms linear;
   }
   &-exit {
     opacity: 1;
   }
   &-exit-active {
     opacity: 0;
-    transition: opacity 200ms ease-in;
+    transition: opacity 200ms linear;
     transition-delay: 200ms;
   }
 }

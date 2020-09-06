@@ -18,13 +18,14 @@ export default function generateTile(tiles: ITile[], gridSize: number) {
     return {
         id: v4(),
         coord: newCoord,
-        value: 2
+        value: 2,
+        toRemove: false
     }
 
     // return {
     //     id: v4(),
     //     coord: {
-    //         x: 1,
+    //         x: 0,
     //         y: 3
     //     },
     //     value: 2
