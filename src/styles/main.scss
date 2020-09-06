@@ -1,0 +1,17 @@
+@import 'core/vars';
+@import 'fonts/Rajdhani.scss';
+
+body {
+  background-color: $bg-color;
+  font-family: Rajdhani;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.App {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

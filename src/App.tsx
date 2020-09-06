@@ -1,12 +1,13 @@
 import React, {KeyboardEvent, useState} from 'react';
-import './App.css';
 import isEqual from 'lodash.isEqual';
 import {ITile} from "./@types/Tile";
 import {generateTile, getMoveDirection, move} from "./lib";
 import Grid from "./components/Grid";
-import {Direction} from "./lib/getMoveDirection";
+import {Color} from './@types/Color';
+import Score from "./components/Score";
 
 function App() {
+  const [colorPalette, setPalette] = useState<Color>(Color.Warm);
   const startGame = () => {
     const tile1 = generateTile([], gridSize)
     const tile2 = generateTile([tile1], gridSize)
@@ -68,8 +69,9 @@ function App() {
 
   return (
     <div className="App" onKeyDown={onKeyDown} tabIndex={0}>
+      <Score score={String(score)} />
       <h1>{score}</h1>
-      <Grid tiles={tiles} gridSize={gridSize} />
+      <Grid colorPalette={colorPalette} tiles={tiles} gridSize={gridSize} />
     </div>
   );
 }

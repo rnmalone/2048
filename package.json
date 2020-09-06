@@ -144,8 +144,10 @@
   },
   "devDependencies": {
     "@babel/polyfill": "^7.11.5",
+    "@types/classnames": "^2.2.10",
     "@types/react-transition-group": "^4.4.0",
     "@types/uuid": "^8.3.0",
+    "classnames": "^2.2.6",
     "node-sass": "^4.14.1",
     "react-transition-group": "^4.4.1",
     "ts-loader": "^8.0.3",

@@ -1,0 +1,47 @@
+@import 'core/vars';
+
+@mixin warm {
+  &--warm-2 {
+    background-color: $warm-2;
+  }
+
+  &--warm-4 {
+    background-color: $warm-4;
+  }
+
+  &--warm-8 {
+    background-color: $warm-8;
+  }
+
+  &--warm-16 {
+    background-color: $warm-16;
+  }
+
+  &--warm-32 {
+    background-color: $warm-32;
+  }
+
+  &--warm-64 {
+    background-color: $warm-64;
+  }
+
+  &--warm-128 {
+    background-color: $warm-128;
+  }
+
+  &--warm-256 {
+    background-color: $warm-256;
+  }
+
+  &--warm-512 {
+    background-color: $warm-512;
+  }
+
+  &--warm-1024 {
+    background-color: $warm-1024;
+  }
+
+  &--warm-2048 {
+    background-color: $warm-2048;
+  }
+}

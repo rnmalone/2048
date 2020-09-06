@@ -1,13 +1,40 @@
+@import 'core/vars';
+@import 'mixins/warm';
+
 .Tile {
-  background-color: cadetblue;
+  @include warm;
   display: flex;
   align-items: center;
   justify-content: center;
   position: absolute;
   height: 90px;
   width: 90px;
-  transition: transform .2s linear;
-  border-radius: 5px;
+  transition: all .2s linear;
+  border-radius: 50%;
+  font-size: 1.4em;
+  -webkit-box-shadow: -10px 10px 39px -8px rgba(0,0,0,0.75);
+  -moz-box-shadow: -10px 10px 39px -8px rgba(0,0,0,0.75);
+  box-shadow: -10px 10px 39px -8px rgba(0,0,0,0.75);
+
+  //&:after {
+  //  position: absolute;
+  //  height: 100%;
+  //  width: 100%;
+  //  content: '';
+  //  -webkit-box-shadow: 0px 0px 68px 26px rgba(0,0,0,0.58);
+  //  -moz-box-shadow: 0px 0px 68px 26px rgba(0,0,0,0.58);
+  //  box-shadow: 0px 0px 68px 26px rgba(0,0,0,0.58);
+  //}
+  //
+  //&:before {
+  //  position: absolute;
+  //  height: 100%;
+  //  width: 100%;
+  //  content: '';
+  //  -webkit-box-shadow: 0px 0px 68px 84px rgba(0,0,0,0.17);
+  //  -moz-box-shadow: 0px 0px 68px 84px rgba(0,0,0,0.17);
+  //  box-shadow: 0px 0px 68px 84px rgba(0,0,0,0.17);
+  //}
 
   &-enter {
     opacity: 0;

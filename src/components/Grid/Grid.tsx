@@ -4,13 +4,15 @@ import {IPosition, ITile} from '../../@types/Tile';
 import './Grid.scss';
 import Tile from "../Tile";
 import {CSSTransition, TransitionGroup} from "react-transition-group";
+import { Color } from '../../@types/Color';
 
 export interface IGrid {
     tiles: ITile[];
+    colorPalette: Color;
     gridSize: number;
 }
 
-export default function Grid({ tiles }: IGrid) {
+export default function Grid({ tiles, colorPalette }: IGrid) {
 
     const getTileStyle = ({x, y}: IPosition) => {
         return {
@@ -19,7 +21,7 @@ export default function Grid({ tiles }: IGrid) {
     };
 
     return (
-        <section>
+        <section className="Grid">
             <TransitionGroup className="todo-list">
                 {
                     tiles.map(({
@@ -33,6 +35,7 @@ export default function Grid({ tiles }: IGrid) {
                             classNames="Tile"
                         >
                             <Tile
+                                colorPalette={colorPalette}
                                 id={id}
                                 key={id}
                                 value={value}
