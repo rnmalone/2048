@@ -9,7 +9,7 @@
   position: absolute;
   height: 90px;
   width: 90px;
-  transition: all .2s linear;
+  transition: all .2s ease-in-out;
   border-radius: 50%;
   font-size: 1.4em;
   -webkit-box-shadow: -10px 10px 39px -8px rgba(0,0,0,0.75);
@@ -49,5 +49,6 @@
   &-exit-active {
     opacity: 0;
     transition: opacity 200ms ease-in;
+    transition-delay: 200ms;
   }
 }

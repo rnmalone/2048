@@ -18,38 +18,38 @@ function App() {
   const [gridSize, setGridSize] = useState(4);
   // const [tiles, setTiles] = useState<ITile[]>(startGame());
   const [tiles, setTiles] = useState<ITile[]>([
-    {
-      id: '1',
-      value: 2,
-      coord: {
-        y: 0,
-        x: 0
-      }
-    },
-    {
-      id: '2',
-      value: 2,
-      coord: {
-        y: 0,
-        x: 1
-      }
-    },
+    // {
+    //   id: '1',
+    //   value: 2,
+    //   coord: {
+    //     y: 0,
+    //     x: 0
+    //   }
+    // },
+    // {
+    //   id: '2',
+    //   value: 32,
+    //   coord: {
+    //     y: 0,
+    //     x: 1
+    //   }
+    // },
     {
       id: '3',
-      value: 2,
+      value: 8,
       coord: {
         y: 0,
         x: 2
       }
     },
-    {
-      id: '4',
-      value: 16,
-      coord: {
-        y: 0,
-        x: 3
-      }
-    }
+    // {
+    //   id: '4',
+    //   value: 2,
+    //   coord: {
+    //     y: 0,
+    //     x: 3
+    //   }
+    // }
   ]);
 
 
@@ -70,7 +70,6 @@ function App() {
   return (
     <div className="App" onKeyDown={onKeyDown} tabIndex={0}>
       <Score score={String(score)} />
-      <h1>{score}</h1>
       <Grid colorPalette={colorPalette} tiles={tiles} gridSize={gridSize} />
     </div>
   );

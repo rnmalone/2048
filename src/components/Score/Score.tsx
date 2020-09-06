@@ -9,30 +9,34 @@ export default function Score({ score }: { score: string }) {
         const y = (100 / numberReel.length) - ((100 / numberReel.length) * digit);
 
         return {
-            transform: `translate(${100 * x}%, ${y}%)`,
-            transition: `transform ${(score.length * 150) - (x*150)}ms ease-in-out`
+            transform: `translate(0, ${y}%)`,
+            transition: `transform ${(score.length * 150) - (x * 150)}ms ease-in-out`
         }
     };
 
 
     return (
-        <div className="Score">
+        <div
+            className="Score"
+        >
             {
                 score.split('').map((digit: string, reelNumber: number) => (
-                    <div
-                        className="Score__reel"
-                        key={`reel-${reelNumber}`}
-                        style={getReelStyle(reelNumber, Number(digit))}
-                    >
-                        {
-                            numberReel.map((value, i) => (
-                                <span
-                                    key={`reel-${reelNumber}-value-${value}`}
-                                >
-                                    {value}
-                                </span>
-                            ))
-                        }
+                    <div className="Score__reel__container">
+                        <div
+                            className="Score__reel"
+                            key={`reel-${reelNumber}`}
+                            style={getReelStyle(reelNumber, Number(digit))}
+                        >
+                            {
+                                numberReel.map((value, i) => (
+                                    <span
+                                        key={`reel-${reelNumber}-value-${value}`}
+                                    >
+                                        {value}
+                                    </span>
+                                ))
+                            }
+                        </div>
                     </div>
                 ))
             }
