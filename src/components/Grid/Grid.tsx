@@ -12,6 +12,20 @@ export interface IGrid {
     gridSize: number;
 }
 
+const gridTiles = Array(4).fill(null).reduce((a, _: any, row) => [
+    ...a,
+    ...Array(4).fill(null).map((_: any, i: number) => ({
+        coord: {
+            x: row,
+            y: i
+        }
+    }))
+    ], []
+)
+
+
+console.log(gridTiles)
+
 export default function Grid({ tiles, colorPalette }: IGrid) {
 
     const getTileStyle = ({x, y}: IPosition) => {
@@ -22,6 +36,13 @@ export default function Grid({ tiles, colorPalette }: IGrid) {
 
     return (
         <section className="Grid">
+            {
+                gridTiles.map((item: Partial<ITile>, i: number) => <div
+                    key={`blank-${i}`}
+                    style={getTileStyle(item.coord!)}
+                    className="Grid__empty-cell"
+                />)
+            }
             <TransitionGroup className="todo-list">
                 {
                     tiles.map(({

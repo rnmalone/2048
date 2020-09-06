@@ -1,11 +1,15 @@
 @import 'core/vars';
+@import 'template/tile';
 
 .Grid {
   position: relative;
   width: 400px;
   height: 400px;
-
   border-radius: 5px;
+  margin: 2rem;
 
-
+  &__empty-cell {
+    @extend .tile-template;
+    background-color: darken($amount: .9, $color: $bg-color);
+  }
 }
