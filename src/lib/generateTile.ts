@@ -1,5 +1,5 @@
 import {ITile} from "../@types/Tile";
-import { v4 } from 'uuid'
+import {v4} from 'uuid'
 
 export default function generateTile(tiles: ITile[], gridSize: number) {
     const random = () => Math.floor(Math.random() * gridSize);
@@ -21,13 +21,4 @@ export default function generateTile(tiles: ITile[], gridSize: number) {
         value: 2,
         toRemove: false
     }
-
-    // return {
-    //     id: v4(),
-    //     coord: {
-    //         x: 0,
-    //         y: 3
-    //     },
-    //     value: 2
-    // }
 }

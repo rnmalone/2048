@@ -3,7 +3,7 @@ import './Score.scss'
 
 const numberReel = Array(10).fill(null).map((_: any, i) => i);
 
-export default function Score({ score }: { score: string }) {
+export default function Score({score}: { score: string }) {
 
     const getReelStyle = (x: number, digit: number) => {
         const y = (100 / numberReel.length) - ((100 / numberReel.length) * digit);
@@ -14,17 +14,15 @@ export default function Score({ score }: { score: string }) {
         }
     };
 
-
     return (
         <div
             className="Score"
         >
             {
                 score.split('').map((digit: string, reelNumber: number) => (
-                    <div className="Score__reel__container">
+                    <div key={`reel-${reelNumber}`} className="Score__reel__container">
                         <div
                             className="Score__reel"
-                            key={`reel-${reelNumber}`}
                             style={getReelStyle(reelNumber, Number(digit))}
                         >
                             {

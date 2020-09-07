@@ -2,10 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="95160301-fcac-420b-a797-b8772d1b05c8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/lib/blankTiles.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/startGame.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/webpack.dev.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/webpack.dev.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/@types/Key.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/@types/Key.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/@types/Tile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/@types/Tile.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.test.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Grid/Grid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Grid/Grid.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Grid/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Grid/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Score/Score.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Score/Score.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Score/Score.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Score/Score.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Score/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Score/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Tile/Tile.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tile/Tile.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Tile/Tile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tile/Tile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Tile/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tile/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/generateTile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/generateTile.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/getMoveDirection.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/getMoveDirection.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/move.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/move.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react-app-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/react-app-env.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/serviceWorker.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/serviceWorker.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/core/vars.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/core/vars.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/fonts/Rajdhani.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/fonts/Rajdhani.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/template/tile.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/template/tile.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

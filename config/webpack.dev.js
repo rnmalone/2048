@@ -6,7 +6,7 @@ const config = require('./project.config');
 const APP_ENTRY = config.paths.src('index.tsx');
 const TEMPLATE = config.paths.public('index.html');
 
-console.log('merge', config.paths.public())
+console.log('merge', config.paths.public());
 
 module.exports = merge.merge(defaultConfig, {
     // Webpack will default some settings for development mode
