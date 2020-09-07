@@ -12,9 +12,11 @@ export default function getMoveDirection(event: KeyboardEvent<HTMLDivElement>) {
     if (event.which === Key.S || event.which === Key.Down) {
         return Direction.Down
     }
+
     if (event.which === Key.W || event.which === Key.Up) {
         return Direction.Up
     }
+
     if (event.which === Key.D || event.which === Key.Right) {
         return Direction.Right
     }

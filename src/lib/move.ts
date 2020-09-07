@@ -20,12 +20,12 @@ export default function move(direction: Direction, grid: ITile[]) {
                 const potentialMerge = arr[nextItemI];
 
                 let newValue = item.value;
-                let toRemove = false;
+                let mergedWithId = false;
                 let newCoord = item.coord;
 
                 // this tile is merged with previous. Ignore it.
                 if (stagedRemovals.includes(item.id)) {
-                    toRemove = true;
+                    mergedWithId = true;
                     newCoord = {
                         ...newCoord,
                         [positionKey]: a[i - 1]?.coord[positionKey]
@@ -45,7 +45,7 @@ export default function move(direction: Direction, grid: ITile[]) {
                     {
                         ...item,
                         value: newValue,
-                        toRemove,
+                        mergedWithId,
                         coord: newCoord
                     }
                 ]
@@ -65,7 +65,7 @@ export default function move(direction: Direction, grid: ITile[]) {
 
                 if (i === 0) {
                     newPosition = isInverse ? 3 : 0;
-                } else if (item.toRemove) {
+                } else if (item.mergedWithId) {
                     newPosition = previous?.coord[positionKey]
                 } else {
                     newPosition = isInverse ? previous?.coord[positionKey] - 1 : previous?.coord[positionKey] + 1;

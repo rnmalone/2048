@@ -3,13 +3,13 @@ import cx from 'classnames';
 import './Tile.scss';
 import {Color} from "../../@types/Color";
 
-export default function Tile({colorPalette, id, value, x, y, toRemove}) {
+export default function Tile({colorPalette, id, value, x, y, mergedWithId}) {
     const [style, setStyle] = useState();
     const requestRef = useRef();
 
     const calcStyle = () => void setStyle({
         transform: `translate(${x * 100}px, ${y * 100}px)`,
-        zIndex: toRemove ? 0 : 10,
+        zIndex: mergedWithId ? 0 : 10,
     });
 
     useEffect(() => {

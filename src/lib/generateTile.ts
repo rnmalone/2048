@@ -19,6 +19,6 @@ export default function generateTile(tiles: ITile[], gridSize: number) {
         id: v4(),
         coord: newCoord,
         value: 2,
-        toRemove: false
+        mergedWithId: false
     }
 }

@@ -37,7 +37,7 @@ export default function Grid({tiles, colorPalette}: IGrid) {
                                    coord,
                                    value,
                                    id,
-                                   toRemove
+                                   mergedWithId
                                }) => (
                         <CSSTransition
                             key={id}
@@ -49,7 +49,7 @@ export default function Grid({tiles, colorPalette}: IGrid) {
                                 id={id}
                                 key={id}
                                 value={value}
-                                toRemove={toRemove}
+                                mergedWithId={mergedWithId}
                                 {...coord}
                             />
                         </CSSTransition>

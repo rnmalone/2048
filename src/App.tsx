@@ -23,12 +23,14 @@ function App() {
                 setScore((oldState) => oldState + scoreDelta)
             }
             if (!isEqual(newTiles, tiles)) {
-                setTiles([...newTiles, generateTile(newTiles, gridSize)]);
+                setTiles(newTiles);
 
                 setTimeout(() => {
-                    setTiles(oldState => oldState.filter(({toRemove}) => !toRemove));
-                    setBlocked(false)
-                }, 200)
+                    requestAnimationFrame(() => {
+                        setTiles(oldState => [...oldState.filter(({mergedWithId}) => !mergedWithId),  generateTile(newTiles, gridSize)])
+                        setBlocked(false)
+                    });
+                }, 500)
             }
         } else {
             setBlocked(false)
