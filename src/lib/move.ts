@@ -6,23 +6,20 @@ export default function move(direction: Direction, grid: ITile[]) {
     let scoreDelta = 0;
     const positionKey: keyof IPosition = (direction === Direction.Up || direction === Direction.Down) ? 'y': 'x';
     const inverseArray = direction === Direction.Left || direction === Direction.Up;
-
-    console.log(inverseArray);
-
-    const nextItemIndex = (i) => inverseArray ? i + 1 : i - 1
-
+    const nextItemIndex = (i: number) => inverseArray ? i + 1 : i - 1;
     let newTiles: ITile[] = [];
+
 
     for(let i = 0; i < 4; i++) {
         const set = grid.filter((item) => item.coord[positionKey === 'y' ? 'x' : 'y'] === i);
 
-        const stagedRemovals = [];
+        const stagedRemovals: string[] = [];
         if(set.length) {
             const reduceSet = (a: ITile[], item: ITile, i: number, arr: ITile[]) => {
                 const nextItemI = nextItemIndex(i)
                 const potentialMerge = arr[nextItemI]
                 // console.log(item.id, potentialMerge?.id, arr);
-                
+
                 let newValue = item.value;
                 let toRemove = false;
                 let newCoord = item.coord;

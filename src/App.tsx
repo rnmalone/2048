@@ -119,7 +119,6 @@ function App() {
     }
   };
 
-
   return (
     <div className="App" onKeyDown={onKeyDown} tabIndex={0}>
       <Score score={String(score)} />
