@@ -14,5 +14,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  &__scores {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 

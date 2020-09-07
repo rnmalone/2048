@@ -1,16 +1,17 @@
-import React, {KeyboardEvent, useState} from 'react';
+import React, {KeyboardEvent, useEffect, useState} from 'react';
 import isEqual from 'lodash.isEqual';
 import {ITile} from "./@types/Tile";
 import {generateTile, getMoveDirection, move, startGame} from "./lib";
 import Grid from "./components/Grid";
 import {Color} from './@types/Color';
 import Score from "./components/Score";
+import {useScore} from "./lib/hooks";
 
 function App() {
     const [blocked, setBlocked] = useState<boolean>(false);
     const [colorPalette, setPalette] = useState<Color>(Color.Warm);
-    const [score, setScore] = useState<number>(0);
     const [gridSize, setGridSize] = useState(4);
+    const { score, setScore, highScore } = useScore();
     // const [tiles, setTiles] = useState<ITile[]>(startGame());
     const [tiles, setTiles] = useState<ITile[]>([
         // {
@@ -39,6 +40,25 @@ function App() {
         }
     ]);
 
+    useEffect(() => {
+        const retrievedGame: string | null = localStorage.getItem('2048-game');
+
+        if(retrievedGame) {
+            const parsed = JSON.parse(retrievedGame);
+            setScore(parsed.score);
+            setTiles(parsed.tiles)
+        }
+    }, []);
+
+    useEffect(() => {
+        localStorage.setItem('2048-game', JSON.stringify({ score, tiles }))
+    }, [tiles]);
+
+    const resetGame = () => {
+        setScore(0)
+        setTiles(startGame())
+    };
+
     const onKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
         if (blocked) return void 0;
         setBlocked(true);
@@ -53,7 +73,7 @@ function App() {
 
                 setTimeout(() => {
                     requestAnimationFrame(() => {
-                        setTiles(oldState => [...oldState.filter(({mergedWithId}) => !mergedWithId),  generateTile(newTiles, gridSize)])
+                        setTiles(oldState => [...oldState.filter(({toRemove}) => !toRemove),  generateTile(newTiles, gridSize)])
                         setBlocked(false)
                     });
                 }, 500)

@@ -7,5 +7,5 @@ export interface ITile {
     id: string,
     coord: IPosition
     value: number;
-    mergedWithId?: boolean;
+    toRemove?: boolean;
 }

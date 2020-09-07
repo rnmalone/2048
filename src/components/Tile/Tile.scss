@@ -6,6 +6,8 @@
   @include warm;
   @extend .tile-template;
 
+  transition: all .2s ease-in-out;
+
   &-enter {
     opacity: 0;
   }
@@ -23,5 +25,26 @@
     opacity: 0;
     transition: opacity 200ms linear;
     //transition-delay: 200ms;
+  }
+
+  &__content {
+    &-enter {
+      transform: scale(1.5);
+    }
+    &-enter-active {
+      transform: scale(1);
+
+    }
+    &-exit {
+      transform: scale(1);
+    }
+    &-exit-active {
+      transform: scale(.7);
+    }
+    &-enter-active,
+    &-exit-active {
+      transition: opacity 150ms, transform 150ms;
+    }
+
   }
 }
