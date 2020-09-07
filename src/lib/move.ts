@@ -1,11 +1,13 @@
 import {IPosition, ITile} from "../@types/Tile";
 import {Direction} from "./getMoveDirection";
+import {sortTiles} from "./index";
 
 
 export default function move(direction: Direction, grid: ITile[]) {
     let scoreDelta = 0;
     const positionKey: keyof IPosition = (direction === Direction.Up || direction === Direction.Down) ? 'y' : 'x';
     const inverseArray = direction === Direction.Left || direction === Direction.Up;
+    const isInverse = direction === Direction.Down || direction === Direction.Right;
     const nextItemIndex = (i: number) => inverseArray ? i + 1 : i - 1;
     let newTiles: ITile[] = [];
 
@@ -15,6 +17,8 @@ export default function move(direction: Direction, grid: ITile[]) {
 
         const stagedRemovals: string[] = [];
         if (set.length) {
+            const sortedSetItems = set.sort(sortTiles(positionKey))
+
             const reduceSet = (a: ITile[], item: ITile, i: number, arr: ITile[]) => {
                 const nextItemI = nextItemIndex(i);
                 const potentialMerge = arr[nextItemI];
@@ -52,12 +56,8 @@ export default function move(direction: Direction, grid: ITile[]) {
             };
 
             const reducedSet = inverseArray ?
-                set.reduce(reduceSet, []) :
-                set.reduceRight(reduceSet, []);
-
-
-            const isInverse = direction === Direction.Down || direction === Direction.Right;
-
+                sortedSetItems.reduce(reduceSet, []) :
+                sortedSetItems.reduceRight(reduceSet, []);
 
             const shift = (a: ITile[], item: ITile, i: number) => {
                 const previous = a[i - 1];
@@ -83,11 +83,10 @@ export default function move(direction: Direction, grid: ITile[]) {
                 ]
             };
 
-            const shifted = reducedSet.reduce(shift, []);
 
-            const arrangedItem = inverseArray ? shifted : shifted.reverse();
+            const arrangedItem = reducedSet.reduce(shift, []);
 
-            newTiles = [...newTiles, ...arrangedItem]
+            newTiles = [...newTiles, ...arrangedItem];
         }
     }
 

@@ -11,7 +11,33 @@ function App() {
     const [colorPalette, setPalette] = useState<Color>(Color.Warm);
     const [score, setScore] = useState<number>(0);
     const [gridSize, setGridSize] = useState(4);
-    const [tiles, setTiles] = useState<ITile[]>(startGame());
+    // const [tiles, setTiles] = useState<ITile[]>(startGame());
+    const [tiles, setTiles] = useState<ITile[]>([
+        // {
+        //     id: '1',
+        //     value: 2,
+        //     coord: {
+        //         x: 0,
+        //         y: 0
+        //     }
+        // },
+        {
+            id: '2',
+            value: 2,
+            coord: {
+                x: 1,
+                y: 0
+            }
+        },
+        {
+            id: '3',
+            value: 2,
+            coord: {
+                x: 2,
+                y: 0
+            }
+        }
+    ]);
 
     const onKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
         if (blocked) return void 0;
@@ -31,6 +57,8 @@ function App() {
                         setBlocked(false)
                     });
                 }, 500)
+            } else {
+                setBlocked(false)
             }
         } else {
             setBlocked(false)
