@@ -1,9 +1,13 @@
 @import 'core/vars';
 @import 'mixins/warm';
+@import 'mixins/cold';
+@import 'mixins/forest';
 @import 'template/tile';
 
 .Tile {
   @include warm;
+  @include cold;
+  @include forest;
   @extend .tile-template;
 
   transition: all .2s ease-in-out;
@@ -24,7 +28,6 @@
   &-exit-active {
     opacity: 0;
     transition: opacity 200ms linear;
-    //transition-delay: 200ms;
   }
 
   &__content {

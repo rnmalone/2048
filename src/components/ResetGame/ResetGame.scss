@@ -1,0 +1,21 @@
+.ResetGame {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  &__options {
+    margin-top: .5rem;
+    display: flex;
+    align-items: center;
+    opacity: 1;
+    transition: opacity .15s linear;
+
+    a {
+      margin: .5rem;
+    }
+
+    &--hide {
+      opacity: 0;
+    }
+  }
+}

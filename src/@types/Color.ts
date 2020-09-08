@@ -1,3 +1,5 @@
 export enum Color {
-    Warm = 'warm'
+    Warm = 'warm',
+    Cold = 'cold',
+    Forest = 'forest'
 }

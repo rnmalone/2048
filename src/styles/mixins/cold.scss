@@ -1,0 +1,47 @@
+@import 'core/vars';
+
+@mixin cold {
+  &--cold-2 {
+    background-color: $cold-2;
+  }
+
+  &--cold-4 {
+    background-color: $cold-4;
+  }
+
+  &--cold-8 {
+    background-color: $cold-8;
+  }
+
+  &--cold-16 {
+    background-color: $cold-16;
+  }
+
+  &--cold-32 {
+    background-color: $cold-32;
+  }
+
+  &--cold-64 {
+    background-color: $cold-64;
+  }
+
+  &--cold-128 {
+    background-color: $cold-128;
+  }
+
+  &--cold-256 {
+    background-color: $cold-256;
+  }
+
+  &--cold-512 {
+    background-color: $cold-512;
+  }
+
+  &--cold-1024 {
+    background-color: $cold-1024;
+  }
+
+  &--cold-2048 {
+    background-color: $cold-2048;
+  }
+}

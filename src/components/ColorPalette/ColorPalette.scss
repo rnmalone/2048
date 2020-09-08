@@ -1,0 +1,32 @@
+@import 'core/vars';
+
+.ColorPalette {
+  display: flex;
+  align-items: center;
+
+  &__color {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform .15s ease-in-out;
+    margin: 0 .5rem;
+
+    &:hover {
+      transform: rotate(30deg) scale(1.2);
+    }
+
+    &--warm {
+      background: $warm-gradient;
+    }
+
+    &--cold {
+      background: $cold-gradient;
+    }
+
+    &--forest {
+      background: $forest-gradient;
+    }
+  }
+
+}

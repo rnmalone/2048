@@ -1,0 +1,47 @@
+@import 'core/vars';
+
+@mixin forest {
+  &--forest-2 {
+    background-color: $forest-2;
+  }
+
+  &--forest-4 {
+    background-color: $forest-4;
+  }
+
+  &--forest-8 {
+    background-color: $forest-8;
+  }
+
+  &--forest-16 {
+    background-color: $forest-16;
+  }
+
+  &--forest-32 {
+    background-color: $forest-32;
+  }
+
+  &--forest-64 {
+    background-color: $forest-64;
+  }
+
+  &--forest-128 {
+    background-color: $forest-128;
+  }
+
+  &--forest-256 {
+    background-color: $forest-256;
+  }
+
+  &--forest-512 {
+    background-color: $forest-512;
+  }
+
+  &--forest-1024 {
+    background-color: $forest-1024;
+  }
+
+  &--forest-2048 {
+    background-color: $forest-2048;
+  }
+}
