@@ -1,16 +1,18 @@
 import React, {KeyboardEvent, useEffect, useState} from 'react';
 import isEqual from 'lodash.isEqual';
 import {ITile} from "./@types/Tile";
-import {generateTile, getMoveDirection, move, startGame} from "./lib";
+import {checkGameOver, generateTile, getMoveDirection, move, startGame} from "./lib";
 import Grid from "./components/Grid";
 import {Color} from './@types/Color';
 import Score from "./components/Score";
 import {useScore} from "./lib/hooks";
 import ResetGame from "./components/ResetGame";
 import ColorPalette from "./components/ColorPalette";
+import GameOver from "./components/GameOver";
 
 function App() {
     const [blocked, setBlocked] = useState<boolean>(false);
+    const [gameOver, setGameOver] = useState<boolean>(false);
     const [colorPalette, setPalette] = useState<Color>(Color.Warm);
     const [gridSize, setGridSize] = useState(4);
     const { score, setScore, highScore } = useScore();
@@ -58,12 +60,13 @@ function App() {
     }, [tiles]);
 
     const resetGame = () => {
-        setScore(0)
+        setScore(0);
+        setGameOver(false);
         setTiles(startGame())
     };
 
     const onKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
-        if (blocked) return void 0;
+        if (blocked || gameOver) return void 0;
         setBlocked(true);
         const direction = getMoveDirection(event);
         if (direction) {
@@ -75,10 +78,12 @@ function App() {
                 setTiles(newTiles);
 
                 setTimeout(() => {
-                    requestAnimationFrame(() => {
-                        setTiles(oldState => [...oldState.filter(({toRemove}) => !toRemove),  generateTile(newTiles, gridSize)])
+                    if(tiles.length >= gridSize ** 2 && checkGameOver(newTiles)) {
+                        setGameOver(true)
+                    } else {
+                        setTiles(oldState => [...oldState.filter(({toRemove}) => !toRemove), generateTile(newTiles, gridSize)])
                         setBlocked(false)
-                    });
+                    }
                 }, 500)
             } else {
                 setBlocked(false)
@@ -91,7 +96,7 @@ function App() {
     return (
         <div className="App" onKeyDown={onKeyDown} tabIndex={0}>
             <Score score={String(score)}/>
-            <Grid colorPalette={colorPalette} tiles={tiles} gridSize={gridSize}/>
+            <Grid gameOver={gameOver} resetGame={resetGame} colorPalette={colorPalette} tiles={tiles} gridSize={gridSize}/>
             <ResetGame onReset={resetGame} />
             <ColorPalette toggle={toggleColor} />
         </div>

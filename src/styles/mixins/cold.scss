@@ -35,13 +35,16 @@
 
   &--cold-512 {
     background-color: $cold-512;
+    color: white
   }
 
   &--cold-1024 {
     background-color: $cold-1024;
+    color: white;
   }
 
   &--cold-2048 {
     background-color: $cold-2048;
+    color: white;
   }
 }

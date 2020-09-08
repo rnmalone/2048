@@ -6,16 +6,19 @@ import Tile from "../Tile";
 import {CSSTransition, TransitionGroup} from "react-transition-group";
 import {Color} from '../../@types/Color';
 import { blankTiles } from '../../lib';
+import GameOver from "../GameOver/GameOver";
 
 export interface IGrid {
     tiles: ITile[];
     colorPalette: Color;
     gridSize: number;
+    resetGame(): void;
+    gameOver: boolean;
 }
 
 
 
-export default function Grid({tiles, colorPalette}: IGrid) {
+export default function Grid({ gameOver, tiles, colorPalette, resetGame }: IGrid) {
     const getTileStyle = ({x, y}: IPosition) => {
         return {
             transform: `translate(${x * 100}px, ${y * 100}px)`
@@ -24,6 +27,7 @@ export default function Grid({tiles, colorPalette}: IGrid) {
 
     return (
         <section className="Grid">
+            { gameOver && <GameOver onReset={resetGame} /> }
             {
                 blankTiles.map((item: Partial<ITile>, i: number) => <div
                     key={`blank-${i}`}

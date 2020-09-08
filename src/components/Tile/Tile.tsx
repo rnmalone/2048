@@ -27,7 +27,6 @@ export default function Tile({colorPalette, value, x, y, toRemove}: ITileCompone
         return () => cancelAnimationFrame(requestRef.current)
     }, [x, y]);
 
-    console.log(colorPalette)
     return (
         <div style={style} className={cx('Tile', {
             [`Tile--warm-${value}`]: colorPalette === Color.Warm,

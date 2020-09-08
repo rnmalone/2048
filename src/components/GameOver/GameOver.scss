@@ -1,0 +1,42 @@
+@import 'core/vars';
+
+@keyframes _appear {
+  from {
+    transform: translate(0, 20%);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+    }
+}
+
+.GameOver {
+  top: 25%;
+  left: 25%;
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  background-color: $bg-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  -webkit-box-shadow: -5px 2px 39px -3px rgba(0,0,0,0.81);
+  -moz-box-shadow: -5px 2px 39px -3px rgba(0,0,0,0.81);
+  box-shadow: -5px 2px 39px -3px rgba(0,0,0,0.81);
+  animation: _appear .6s;
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-box-shadow: inset -5px 2px 37px -7px rgba(0,0,0,0.50);
+    -moz-box-shadow: inset -5px 2px 37px -7px rgba(0,0,0,0.50);
+    box-shadow: inset -5px 2px 37px -7px rgba(0,0,0,0.50);
+    border-radius: 50%;
+  }
+}

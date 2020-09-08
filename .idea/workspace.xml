@@ -2,21 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="95160301-fcac-420b-a797-b8772d1b05c8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/ColorPalette/ColorPalette.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ColorPalette/ColorPalette.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ColorPalette/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ResetGame/ResetGame.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ResetGame/ResetGame.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ResetGame/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/mixins/cold.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/mixins/forest.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/GameOver/GameOver.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/GameOver/GameOver.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/GameOver/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/checkGameOver.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/typography/text.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/@types/Color.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/@types/Color.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Grid/Grid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Grid/Grid.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Tile/Tile.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tile/Tile.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Tile/Tile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tile/Tile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/core/vars.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/core/vars.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/mixins/cold.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/mixins/cold.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/mixins/forest.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/mixins/forest.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/mixins/warm.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/mixins/warm.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +54,9 @@
     <property name="ts.external.directory.path" value="C:\Users\Rorym\Documents\2048\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Rorym\Documents\2048\src\styles\typography" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Rorym\Documents\2048\config" />
     </key>
