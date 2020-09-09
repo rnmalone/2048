@@ -9,13 +9,24 @@
 }
 
 body {
-  background-color: $bg-color;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#333333+0,2b2b2b+51,333333+57,333333+100 */
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#333333+0,2b2b2b+31,333333+40,333333+100 */
+  background: #333333; /* Old browsers */
+  background: -moz-linear-gradient(45deg,  #333333 0%, #2b2b2b 31%, #333333 40%, #333333 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg,  #333333 0%,#2b2b2b 31%,#333333 40%,#333333 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg,  #333333 0%,#2b2b2b 31%,#333333 40%,#333333 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#333333', endColorstr='#333333',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
   font-family: Rajdhani;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   margin: 0;
+
+  -webkit-box-shadow: inset -1px 2px 42px 22px rgba(0,0,0,0.27);
+  -moz-box-shadow: inset -1px 2px 42px 22px rgba(0,0,0,0.27);
+  box-shadow: inset -1px 2px 42px 22px rgba(0,0,0,0.27);
 }
 
 .App {

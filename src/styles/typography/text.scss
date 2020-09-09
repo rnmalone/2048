@@ -1,4 +1,4 @@
-p, a, h1, h2 {
+p, a, h1, h2, h6 {
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #f2f2f2;
@@ -8,4 +8,13 @@ p, a, h1, h2 {
 a {
   font-size: .9em;
   cursor: pointer;
+}
+
+p {
+  font-weight: 400;
+}
+
+h6 {
+  font-size: 1.1em;
+  margin: .5rem 0;
 }

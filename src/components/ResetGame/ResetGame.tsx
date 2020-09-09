@@ -3,6 +3,7 @@ import cx from 'classnames'
 
 import './ResetGame.scss';
 import {onUse} from "../../lib";
+import Anchor from "../Anchor";
 
 interface IResetGame {
     onReset(): void;
@@ -19,12 +20,12 @@ export default function ResetGame({onReset}: IResetGame) {
 
     return (
         <div className="ResetGame">
-            <a {...onUse(toggleWarning(true))} tabIndex={0}>new game</a>
+            <Anchor onClick={toggleWarning(true)}>new game</Anchor>
             <div className={cx('ResetGame__options', {
                 'ResetGame__options--hide': !showWarning
             })}>
-                <a tabIndex={0} {...onUse(toggleWarning(false))}>cancel</a>
-                <a tabIndex={0} {...onUse(resetGame)}>confirm</a>
+                <Anchor onClick={toggleWarning(false)}>cancel</Anchor>
+                <Anchor onClick={resetGame}>confirm</Anchor>
             </div>
         </div>
     )

@@ -2,14 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="95160301-fcac-420b-a797-b8772d1b05c8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Anchor/Anchor.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Anchor/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Instructions/Instructions.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Instructions/Instructions.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Instructions/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/hooks/useOutsideClicks.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/reorderTiles.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ColorPalette/ColorPalette.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ColorPalette/ColorPalette.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Grid/Grid.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Grid/Grid.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GameOver/GameOver.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GameOver/GameOver.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Grid/Grid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Grid/Grid.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Tile/Tile.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tile/Tile.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Tile/Tile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tile/Tile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ResetGame/ResetGame.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ResetGame/ResetGame.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ResetGame/ResetGame.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ResetGame/ResetGame.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/hooks/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/hooks/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/move.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/move.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/template/tile.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/template/tile.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/typography/text.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/typography/text.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +91,7 @@
       <workItem from="1599406040981" duration="5398000" />
       <workItem from="1599496962746" duration="1628000" />
       <workItem from="1599578870909" duration="3765000" />
-      <workItem from="1599668892518" duration="5421000" />
+      <workItem from="1599668892518" duration="10974000" />
     </task>
     <servers />
   </component>

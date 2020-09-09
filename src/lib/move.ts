@@ -1,6 +1,7 @@
 import {IPosition, ITile} from "../@types/Tile";
 import {Direction} from "./getKeyboardMoveDirection";
 import {sortTiles} from "./index";
+import reorderTiles from "./reorderTiles";
 
 
 export default function move(direction: Direction, grid: ITile[]) {
@@ -90,5 +91,7 @@ export default function move(direction: Direction, grid: ITile[]) {
         }
     }
 
-    return {newTiles, scoreDelta}
+    const reorderedTiles = reorderTiles(grid, newTiles)
+
+    return {newTiles: reorderedTiles, scoreDelta}
 }

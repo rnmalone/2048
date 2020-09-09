@@ -10,14 +10,17 @@ import ResetGame from "./components/ResetGame";
 import ColorPalette from "./components/ColorPalette";
 import {useSwipeable} from 'react-swipeable'
 import {Direction} from "./lib/getKeyboardMoveDirection";
+import Anchor from "./components/Anchor";
 
 function App() {
+    const [showInstructions, setShowIntructions] = useState<boolean>(false);
     const [blocked, setBlocked] = useState<boolean>(false);
     const [gameOver, setGameOver] = useState<boolean>(false);
     const [colorPalette, setPalette] = useState<Color>(Color.Warm);
     const [gridSize, setGridSize] = useState(4);
     const {score, setScore, highScore} = useScore();
     const toggleColor = (color: Color) => () => void setPalette(color);
+    const toggleInstructions = () => void setShowIntructions(oldState => !oldState);
     const [tiles, setTiles] = useState<ITile[]>(startGame());
 
     useEffect(() => {
@@ -75,6 +78,7 @@ function App() {
         if (direction) handleAction(direction)
     };
 
+
     return (
         <div
             className="App"
@@ -83,8 +87,16 @@ function App() {
             {...mobileSwipeHandlers}
         >
             <Score score={String(score)}/>
-            <Grid gameOver={gameOver} resetGame={resetGame} colorPalette={colorPalette} tiles={tiles}
-                  gridSize={gridSize}/>
+            <Grid
+                showInstructions={showInstructions}
+                closeInstructions={toggleInstructions}
+                gameOver={gameOver}
+                resetGame={resetGame}
+                colorPalette={colorPalette}
+                tiles={tiles}
+                gridSize={gridSize}
+            />
+            <Anchor onClick={toggleInstructions}>How to play</Anchor>
             <ResetGame onReset={resetGame}/>
             <ColorPalette toggle={toggleColor}/>
         </div>
