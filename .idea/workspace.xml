@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="95160301-fcac-420b-a797-b8772d1b05c8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/jest.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/__test__/move.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/support/fileLoaderStub.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/support/setupTests.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/support/styleLoaderStub.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/__test__/checkGameOver.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/__test__/generateTile.spec.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/start.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/__test__/move.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/__test__/move.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/checkGameOver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/checkGameOver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/move.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/move.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +18,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript JSX File" />
-        <option value="TypeScript File" />
         <option value="JavaScript File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -86,7 +81,7 @@
       <workItem from="1599406040981" duration="5398000" />
       <workItem from="1599496962746" duration="1628000" />
       <workItem from="1599578870909" duration="3765000" />
-      <workItem from="1599668892518" duration="12535000" />
+      <workItem from="1599668892518" duration="18020000" />
     </task>
     <servers />
   </component>
