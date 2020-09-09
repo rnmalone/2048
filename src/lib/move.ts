@@ -1,5 +1,5 @@
 import {IPosition, ITile} from "../@types/Tile";
-import {Direction} from "./getMoveDirection";
+import {Direction} from "./getKeyboardMoveDirection";
 import {sortTiles} from "./index";
 
 
@@ -17,7 +17,7 @@ export default function move(direction: Direction, grid: ITile[]) {
 
         const stagedRemovals: string[] = [];
         if (set.length) {
-            const sortedSetItems = set.sort(sortTiles(positionKey))
+            const sortedSetItems = set.sort(sortTiles(positionKey));
 
             const reduceSet = (a: ITile[], item: ITile, i: number, arr: ITile[]) => {
                 const nextItemI = nextItemIndex(i);

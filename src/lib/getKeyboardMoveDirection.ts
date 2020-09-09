@@ -2,13 +2,13 @@ import {Key} from "../@types/Key";
 import {KeyboardEvent} from "react";
 
 export enum Direction {
-    Up = 'up',
-    Down = 'down',
-    Left = 'left',
-    Right = 'right'
+    Up = 'Up',
+    Down = 'Down',
+    Left = 'Left',
+    Right = 'Right'
 }
 
-export default function getMoveDirection(event: KeyboardEvent<HTMLDivElement>) {
+export default function getKeyboardMoveDirection(event: KeyboardEvent<HTMLDivElement>) {
     if (event.which === Key.S || event.which === Key.Down) {
         return Direction.Down
     }

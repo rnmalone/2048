@@ -2,21 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="95160301-fcac-420b-a797-b8772d1b05c8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/GameOver/GameOver.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/GameOver/GameOver.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/GameOver/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/checkGameOver.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/typography/text.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/onUse.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/webpack.prod.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/webpack.prod.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/build.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/build.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/@types/Key.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/@types/Key.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ColorPalette/ColorPalette.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ColorPalette/ColorPalette.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ColorPalette/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ColorPalette/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GameOver/GameOver.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GameOver/GameOver.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GameOver/GameOver.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GameOver/GameOver.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GameOver/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GameOver/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Grid/Grid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Grid/Grid.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ResetGame/ResetGame.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ResetGame/ResetGame.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ResetGame/ResetGame.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ResetGame/ResetGame.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ResetGame/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ResetGame/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Tile/Tile.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tile/Tile.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Tile/Tile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tile/Tile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/checkGameOver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/checkGameOver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/getMoveDirection.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/getKeyboardMoveDirection.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/hooks/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/hooks/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/hooks/useScore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/hooks/useScore.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/mixins/cold.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/mixins/cold.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/mixins/forest.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/mixins/forest.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/mixins/warm.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/mixins/warm.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/move.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/move.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/core/vars.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/core/vars.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +101,7 @@
       <workItem from="1599406040981" duration="5398000" />
       <workItem from="1599496962746" duration="1628000" />
       <workItem from="1599578870909" duration="3765000" />
+      <workItem from="1599668892518" duration="2381000" />
     </task>
     <servers />
   </component>
@@ -100,13 +113,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599340541976" />
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1599508259513">
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1599599208115">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599508259513" />
-    <state x="581" y="206" width="758" height="628" key="find.popup" timestamp="1599511894779">
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599599208115" />
+    <state x="581" y="206" width="758" height="628" key="find.popup" timestamp="1599670943318">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="581" y="206" width="758" height="628" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599511894779" />
+    <state x="581" y="206" width="758" height="628" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1599670943318" />
   </component>
 </project>

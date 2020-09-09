@@ -5,19 +5,19 @@ export default function useScore() {
     const [highScore, setHighScore] = useState<number>(0);
 
     useEffect(() => {
-        const retrievedHighScore = localStorage.getItem('2048-game-hs')
+        const retrievedHighScore = localStorage.getItem('2048-game-hs');
 
-        if(retrievedHighScore) {
+        if (retrievedHighScore) {
             setHighScore(Number(JSON.parse(retrievedHighScore)))
         }
     }, []);
 
     useEffect(() => {
-        if(score > highScore) {
-            localStorage.setItem('2048-game-hs', `${score}`)
+        if (score > highScore) {
+            localStorage.setItem('2048-game-hs', `${score}`);
             setHighScore(score)
         }
     }, [score]);
 
-    return { score, setScore, highScore }
+    return {score, setScore, highScore}
 }

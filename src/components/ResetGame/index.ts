@@ -1,1 +1,1 @@
-export { default } from './ResetGame';
+export {default} from './ResetGame';

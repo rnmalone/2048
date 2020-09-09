@@ -38,16 +38,20 @@
     &-enter {
       transform: scale(1.5);
     }
+
     &-enter-active {
       transform: scale(1);
 
     }
+
     &-exit {
       transform: scale(1);
     }
+
     &-exit-active {
       transform: scale(.7);
     }
+
     &-enter-active,
     &-exit-active {
       transition: opacity 150ms, transform 150ms;

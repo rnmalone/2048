@@ -3,12 +3,17 @@ import {Color} from "../../@types/Color";
 
 import './ColorPalette.scss';
 
-export default function ColorPalette({ toggle }) {
+interface IColorPalette {
+    toggle(newColor: Color): () => void
+}
+
+export default function ColorPalette({toggle}: IColorPalette) {
     return (
         <div className="ColorPalette">
             {
-                Object.entries(Color).map(([colorKey, value]) => (
+                Object.entries(Color).map(([colorKey, value], i: number) => (
                     <span
+                        key={`${colorKey}-${i}`}
                         role="button"
                         tabIndex={0}
                         onClick={toggle(value)}

@@ -1,1 +1,1 @@
-export { default as useScore } from './useScore';
+export {default as useScore} from './useScore';

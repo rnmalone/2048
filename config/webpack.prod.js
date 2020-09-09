@@ -18,18 +18,19 @@ const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeModulesPlugin');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const getCSSModuleLocalIdent = require('react-dev-utils/getCSSModuleLocalIdent');
-const paths = require('../paths');
-const modules = require('../modules');
-const getClientEnvironment = require('../env');
+const paths = require('./paths');
+const modules = require('./modules');
+const getClientEnvironment = require('./env');
 const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
 const ForkTsCheckerWebpackPlugin = require('react-dev-utils/ForkTsCheckerWebpackPlugin');
 const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
-const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 const project = require('./project.config');
 const postcssNormalize = require('postcss-normalize');
 
 const appPackageJson = require(paths.appPackageJson);
-const APP_ENTRY = project.paths.src('main.tsx');
+const APP_ENTRY = project.paths.src('index.tsx');
+
+console.log(APP_ENTRY)
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
@@ -511,8 +512,6 @@ module.exports = function (webpackEnv) {
             ],
         },
         plugins: [
-            // To strip all locales except “en”
-            new MomentLocalesPlugin(),
             // Generates an `index.html` file with the <script> injected.
             new HtmlWebpackPlugin(
                 Object.assign(

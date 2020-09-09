@@ -1,24 +1,24 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {IPosition, ITile} from '../../@types/Tile';
 
 import './Grid.scss';
 import Tile from "../Tile";
 import {CSSTransition, TransitionGroup} from "react-transition-group";
 import {Color} from '../../@types/Color';
-import { blankTiles } from '../../lib';
+import {blankTiles} from '../../lib';
 import GameOver from "../GameOver/GameOver";
 
 export interface IGrid {
     tiles: ITile[];
     colorPalette: Color;
     gridSize: number;
-    resetGame(): void;
     gameOver: boolean;
+
+    resetGame(): void;
 }
 
 
-
-export default function Grid({ gameOver, tiles, colorPalette, resetGame }: IGrid) {
+export default function Grid({gameOver, tiles, colorPalette, resetGame}: IGrid) {
     const getTileStyle = ({x, y}: IPosition) => {
         return {
             transform: `translate(${x * 100}px, ${y * 100}px)`
@@ -27,7 +27,7 @@ export default function Grid({ gameOver, tiles, colorPalette, resetGame }: IGrid
 
     return (
         <section className="Grid">
-            { gameOver && <GameOver onReset={resetGame} /> }
+            {gameOver && <GameOver onReset={resetGame}/>}
             {
                 blankTiles.map((item: Partial<ITile>, i: number) => <div
                     key={`blank-${i}`}
@@ -50,7 +50,6 @@ export default function Grid({ gameOver, tiles, colorPalette, resetGame }: IGrid
                         >
                             <Tile
                                 colorPalette={colorPalette}
-                                id={id}
                                 key={id}
                                 value={value}
                                 toRemove={toRemove}

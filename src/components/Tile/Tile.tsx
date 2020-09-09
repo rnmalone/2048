@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {CSSProperties, useEffect, useRef, useState} from 'react';
 import cx from 'classnames';
 import './Tile.scss';
 import {Color} from "../../@types/Color";
@@ -9,11 +9,11 @@ interface ITileComponent {
     value: number;
     x: number;
     y: number;
-    toRemove: boolean
+    toRemove?: boolean
 }
 
 export default function Tile({colorPalette, value, x, y, toRemove}: ITileComponent) {
-    const [style, setStyle] = useState();
+    const [style, setStyle] = useState<CSSProperties>({});
     const requestRef = useRef();
 
     const calcStyle = () => void setStyle({
@@ -22,9 +22,10 @@ export default function Tile({colorPalette, value, x, y, toRemove}: ITileCompone
     });
 
     useEffect(() => {
+        // @ts-ignore
         requestRef.current = requestAnimationFrame(calcStyle);
 
-        return () => cancelAnimationFrame(requestRef.current)
+        return () => cancelAnimationFrame(requestRef.current!)
     }, [x, y]);
 
     return (
