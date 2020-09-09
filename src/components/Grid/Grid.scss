@@ -7,65 +7,65 @@
   height: 400px;
   border-radius: 5px;
   margin: 2rem 0;
+
   &__empty-cell {
     @extend .tile-template;
     background-color: darken($amount: .9, $color: $bg-color);
   }
 
 
+  /*
+    ##Device = Desktops
+    ##Screen = 1281px to higher resolution desktops
+  */
+  @media (min-width: 1281px) {
+    width: 400px;
+    height: 400px;
+  }
 
-    /*
-      ##Device = Desktops
-      ##Screen = 1281px to higher resolution desktops
-    */
-    @media (min-width: 1281px) {
-      width: 400px;
-      height: 400px;
-    }
+  /*
+    ##Device = Laptops, Desktops
+    ##Screen = B/w 1025px to 1280px
+  */
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    width: 400px;
+    height: 400px;
+  }
 
-    /*
-      ##Device = Laptops, Desktops
-      ##Screen = B/w 1025px to 1280px
-    */
-    @media (min-width: 1025px) and (max-width: 1280px) {
-      width: 400px;
-      height: 400px;
-    }
+  /*
+    ##Device = Tablets, Ipads (portrait)
+    ##Screen = B/w 768px to 1024px
+  */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    width: 400px;
+    height: 400px;
+  }
 
-    /*
-      ##Device = Tablets, Ipads (portrait)
-      ##Screen = B/w 768px to 1024px
-    */
-    @media (min-width: 768px) and (max-width: 1024px) {
-      width: 400px;
-      height: 400px;
-    }
+  /*
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    width: 400px;
+    height: 400px;
+  }
 
-    /*
-      ##Device = Tablets, Ipads (landscape)
-      ##Screen = B/w 768px to 1024px
-    */
-    @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-      width: 400px;
-      height: 400px;
-    }
+  /*
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+  @media (min-width: 481px) and (max-width: 767px) {
+    width: 400px;
+    height: 400px;
+  }
 
-    /*
-      ##Device = Low Resolution Tablets, Mobiles (Landscape)
-      ##Screen = B/w 481px to 767px
-    */
-    @media (min-width: 481px) and (max-width: 767px) {
-      width: 400px;
-      height: 400px;
-    }
-
-    /*
-      ##Device = Most of the Smartphones Mobiles (Portrait)
-      ##Screen = B/w 320px to 479px
-    */
-    @media (min-width: 320px) and (max-width: 2560px) and (max-height: 1920px) and (orientation: portrait) {
-      width: 90vw;
-      height: 90vw;
-    }
+  /*
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+  @media (min-width: 320px) and (max-width: 2560px) and (max-height: 1920px) and (orientation: portrait) {
+    width: 90vw;
+    height: 90vw;
+  }
 
 }

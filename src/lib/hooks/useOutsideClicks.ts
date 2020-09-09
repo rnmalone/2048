@@ -1,4 +1,4 @@
-import {Ref, RefObject, useEffect} from "react";
+import {RefObject, useEffect} from "react";
 
 export default function useOutsideClicks(ref: RefObject<HTMLDivElement>, handler: () => void) {
     useEffect(

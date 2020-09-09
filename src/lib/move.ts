@@ -91,7 +91,7 @@ export default function move(direction: Direction, grid: ITile[]) {
         }
     }
 
-    const reorderedTiles = reorderTiles(grid, newTiles)
+    const reorderedTiles = reorderTiles(grid, newTiles);
 
     return {newTiles: reorderedTiles, scoreDelta}
 }

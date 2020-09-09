@@ -7,5 +7,5 @@ export enum Key {
     A = 65,
     S = 83,
     D = 68,
-    Enter =13
+    Enter = 13
 }

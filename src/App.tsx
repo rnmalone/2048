@@ -13,14 +13,14 @@ import {Direction} from "./lib/getKeyboardMoveDirection";
 import Anchor from "./components/Anchor";
 
 function App() {
-    const [showInstructions, setShowIntructions] = useState<boolean>(false);
+    const [showInstructions, setShowInstructions] = useState<boolean>(false);
     const [blocked, setBlocked] = useState<boolean>(false);
     const [gameOver, setGameOver] = useState<boolean>(false);
     const [colorPalette, setPalette] = useState<Color>(Color.Warm);
     const [gridSize, setGridSize] = useState(4);
     const {score, setScore, highScore} = useScore();
     const toggleColor = (color: Color) => () => void setPalette(color);
-    const toggleInstructions = () => void setShowIntructions(oldState => !oldState);
+    const toggleInstructions = () => void setShowInstructions(oldState => !oldState);
     const [tiles, setTiles] = useState<ITile[]>(startGame());
 
     useEffect(() => {

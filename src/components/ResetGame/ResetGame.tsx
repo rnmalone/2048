@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import cx from 'classnames'
 
 import './ResetGame.scss';
-import {onUse} from "../../lib";
 import Anchor from "../Anchor";
 
 interface IResetGame {

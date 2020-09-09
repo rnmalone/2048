@@ -1,4 +1,4 @@
-import React, {CSSProperties, useEffect, useRef, useState} from 'react';
+import React, {CSSProperties, useCallback, useEffect, useRef, useState} from 'react';
 import cx from 'classnames';
 import './Tile.scss';
 import {Color} from "../../@types/Color";
@@ -14,12 +14,16 @@ interface ITileComponent {
 
 export default function Tile({colorPalette, value, x, y, toRemove}: ITileComponent) {
     const [style, setStyle] = useState<CSSProperties>({});
-    const requestRef = useRef();
+    const requestRef = useRef(null);
 
     const calcStyle = () => void setStyle({
         transform: `translate(${x * 100}%, ${y * 100}%)`,
         zIndex: toRemove ? 0 : 10,
     });
+
+    const endListener = useCallback(() => (node: any, done: any) => {
+        node.addEventListener("transitionend", done, false);
+    }, []);
 
     useEffect(() => {
         // @ts-ignore
@@ -38,9 +42,7 @@ export default function Tile({colorPalette, value, x, y, toRemove}: ITileCompone
                 <SwitchTransition mode={'out-in'}>
                     <CSSTransition
                         key={value}
-                        addEndListener={(node, done) => {
-                            node.addEventListener("transitionend", done, false);
-                        }}
+                        addEndListener={endListener()}
                         classNames="Tile__content"
                     >
                         <p>{value}</p>
