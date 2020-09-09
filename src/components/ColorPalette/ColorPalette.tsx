@@ -13,6 +13,7 @@ export default function ColorPalette({toggle}: IColorPalette) {
             {
                 Object.entries(Color).map(([colorKey, value], i: number) => (
                     <span
+                        aria-label={`button-change-color-${colorKey}`}
                         key={`${colorKey}-${i}`}
                         role="button"
                         tabIndex={0}

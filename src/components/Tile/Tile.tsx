@@ -17,7 +17,7 @@ export default function Tile({colorPalette, value, x, y, toRemove}: ITileCompone
     const requestRef = useRef();
 
     const calcStyle = () => void setStyle({
-        transform: `translate(${x * 100}px, ${y * 100}px)`,
+        transform: `translate(${x * 100}%, ${y * 100}%)`,
         zIndex: toRemove ? 0 : 10,
     });
 
@@ -29,22 +29,24 @@ export default function Tile({colorPalette, value, x, y, toRemove}: ITileCompone
     }, [x, y]);
 
     return (
-        <div style={style} className={cx('Tile', {
-            [`Tile--warm-${value}`]: colorPalette === Color.Warm,
-            [`Tile--cold-${value}`]: colorPalette === Color.Cold,
-            [`Tile--forest-${value}`]: colorPalette === Color.Forest,
-        })}>
-            <SwitchTransition mode={'out-in'}>
-                <CSSTransition
-                    key={value}
-                    addEndListener={(node, done) => {
-                        node.addEventListener("transitionend", done, false);
-                    }}
-                    classNames="Tile__content"
-                >
-                    <p>{value}</p>
-                </CSSTransition>
-            </SwitchTransition>
+        <div style={style} className="tile-container">
+            <div className={cx('Tile', {
+                [`Tile--warm-${value}`]: colorPalette === Color.Warm,
+                [`Tile--cold-${value}`]: colorPalette === Color.Cold,
+                [`Tile--forest-${value}`]: colorPalette === Color.Forest,
+            })}>
+                <SwitchTransition mode={'out-in'}>
+                    <CSSTransition
+                        key={value}
+                        addEndListener={(node, done) => {
+                            node.addEventListener("transitionend", done, false);
+                        }}
+                        classNames="Tile__content"
+                    >
+                        <p>{value}</p>
+                    </CSSTransition>
+                </SwitchTransition>
+            </div>
         </div>
     )
 }

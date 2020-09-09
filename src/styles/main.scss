@@ -2,15 +2,26 @@
 @import 'typography/text';
 @import 'fonts/Rajdhani.scss';
 
+#root {
+  max-height: 100vh;
+  max-width: 100vw;
+  overflow: hidden;
+}
+
 body {
   background-color: $bg-color;
   font-family: Rajdhani;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  margin: 0;
 }
 
 .App {
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
   flex-direction: column;
   display: flex;
   align-items: center;
@@ -23,8 +34,4 @@ body {
   }
 }
 
-a {
-  color: white;
-  font-size: .9em;
-  cursor: pointer;
-}
+

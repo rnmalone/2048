@@ -21,7 +21,7 @@ export interface IGrid {
 export default function Grid({gameOver, tiles, colorPalette, resetGame}: IGrid) {
     const getTileStyle = ({x, y}: IPosition) => {
         return {
-            transform: `translate(${x * 100}px, ${y * 100}px)`
+            transform: `translate(${x * 100}%, ${y * 100}%)`
         }
     };
 
@@ -29,13 +29,15 @@ export default function Grid({gameOver, tiles, colorPalette, resetGame}: IGrid) 
         <section className="Grid">
             {gameOver && <GameOver onReset={resetGame}/>}
             {
-                blankTiles.map((item: Partial<ITile>, i: number) => <div
-                    key={`blank-${i}`}
-                    style={getTileStyle(item.coord!)}
-                    className="Grid__empty-cell"
-                />)
+                blankTiles.map((item: Partial<ITile>, i: number) => (<div style={getTileStyle(item.coord!)} className="tile-container">
+                        <div
+                        key={`blank-${i}`}
+
+                        className="Grid__empty-cell"
+                    />
+                    </div>))
             }
-            <TransitionGroup className="todo-list">
+            <TransitionGroup className="tile-list">
                 {
                     tiles.map(({
                                    coord,

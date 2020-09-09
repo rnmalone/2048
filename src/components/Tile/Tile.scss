@@ -10,7 +10,6 @@
   @include forest;
   @extend .tile-template;
 
-  transition: all .2s ease-in-out;
 
   p {
     color: #333333;
