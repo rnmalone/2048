@@ -8,6 +8,7 @@ import {Color} from '../../@types/Color';
 import {blankTiles} from '../../lib';
 import GameOver from "../GameOver/GameOver";
 import Instructions from "../Instructions";
+import { TRANSITION_TIMER } from "../../app.config";
 
 export interface IGrid {
     tiles: ITile[];
@@ -53,7 +54,7 @@ export default function Grid({gameOver, tiles, colorPalette, resetGame, showInst
                                }) => (
                         <CSSTransition
                             key={id}
-                            timeout={500}
+                            timeout={TRANSITION_TIMER}
                             classNames="Tile"
                         >
                             <Tile

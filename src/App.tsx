@@ -11,6 +11,7 @@ import ColorPalette from "./components/ColorPalette";
 import {useSwipeable} from 'react-swipeable'
 import {Direction} from "./lib/getKeyboardMoveDirection";
 import Anchor from "./components/Anchor";
+import { TRANSITION_TIMER } from "./app.config";
 
 function App() {
     const [showInstructions, setShowInstructions] = useState<boolean>(false);
@@ -61,7 +62,7 @@ function App() {
                         setTiles(oldState => [...oldState.filter(({toRemove}) => !toRemove), generateTile(newTiles, gridSize)]);
                         setBlocked(false)
                     }
-                }, 500)
+                }, TRANSITION_TIMER)
             } else {
                 setBlocked(false)
             }

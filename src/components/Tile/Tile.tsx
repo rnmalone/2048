@@ -3,6 +3,7 @@ import cx from 'classnames';
 import './Tile.scss';
 import {Color} from "../../@types/Color";
 import {CSSTransition, SwitchTransition} from 'react-transition-group';
+import { TRANSITION_TIMER } from "../../app.config";
 
 interface ITileComponent {
     colorPalette: Color;
@@ -12,8 +13,14 @@ interface ITileComponent {
     toRemove?: boolean
 }
 
-export default function Tile({colorPalette, value, x, y, toRemove}: ITileComponent) {
-    const [style, setStyle] = useState<CSSProperties>({});
+export default function Tile({
+    colorPalette,
+    value,
+    x,
+    y,
+    toRemove
+}: ITileComponent) {
+    const [style, setStyle] = useState<CSSProperties>(Object.create(null));
     const requestRef = useRef(null);
 
     const calcStyle = () => void setStyle({
@@ -39,9 +46,10 @@ export default function Tile({colorPalette, value, x, y, toRemove}: ITileCompone
                 [`Tile--cold-${value}`]: colorPalette === Color.Cold,
                 [`Tile--forest-${value}`]: colorPalette === Color.Forest,
             })}>
-                <SwitchTransition mode={'out-in'}>
+                <SwitchTransition mode="out-in">
                     <CSSTransition
                         key={value}
+                        timeout={TRANSITION_TIMER}
                         addEndListener={endListener()}
                         classNames="Tile__content"
                     >
