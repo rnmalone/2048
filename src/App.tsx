@@ -1,26 +1,20 @@
-import React, {KeyboardEvent, useEffect, useState} from 'react';
+import React, { KeyboardEvent, useEffect, useState } from 'react';
 import isEqual from 'lodash.isequal';
-import {ITile} from "./@types/Tile";
-import {checkGameOver, generateTile, getKeyboardMoveDirection, move, startGame} from "./lib";
-import Grid from "./components/Grid";
-import {Color} from './@types/Color';
-import Score from "./components/Score";
-import {useScore} from "./lib/hooks";
-import ResetGame from "./components/ResetGame";
-import ColorPalette from "./components/ColorPalette";
-import {useSwipeable} from 'react-swipeable'
-import {Direction} from "./lib/getKeyboardMoveDirection";
-import Anchor from "./components/Anchor";
-import { TRANSITION_TIMER } from "./app.config";
+import { ITile } from "./types/Tile";
+import { checkGameOver, generateTile, getKeyboardMoveDirection, move, startGame } from "./lib";
+import { useScore } from "./lib/hooks";
+import { useSwipeable } from 'react-swipeable'
+import { Direction } from "./lib/getKeyboardMoveDirection";
+import { APP_COLOR_THEMES, TRANSITION_TIMER } from "./app.config";
+import { Score, Grid, Anchor, ResetGame, ColorPalette } from './components';
 
 function App() {
     const [showInstructions, setShowInstructions] = useState<boolean>(false);
     const [blocked, setBlocked] = useState<boolean>(false);
     const [gameOver, setGameOver] = useState<boolean>(false);
-    const [colorPalette, setPalette] = useState<Color>(Color.Warm);
-    const [gridSize, setGridSize] = useState(4);
-    const {score, setScore, highScore} = useScore();
-    const toggleColor = (color: Color) => () => void setPalette(color);
+    const [colorPalette, setPalette] = useState<string>(APP_COLOR_THEMES[0]);
+    const { score, setScore, highScore } = useScore();
+    const toggleColor = (color: string) => () => void setPalette(color);
     const toggleInstructions = () => void setShowInstructions(oldState => !oldState);
     const [tiles, setTiles] = useState<ITile[]>(startGame());
 
@@ -31,11 +25,12 @@ function App() {
             const parsed = JSON.parse(retrievedGame);
             setScore(parsed.score);
             setTiles(parsed.tiles)
+            setGameOver(checkGameOver(parsed.tiles))
         }
     }, []);
 
     useEffect(() => {
-        localStorage.setItem('2048-game', JSON.stringify({score, tiles}))
+        localStorage.setItem('2048-game', JSON.stringify({ score, tiles }))
     }, [tiles]);
 
     const resetGame = () => {
@@ -48,7 +43,7 @@ function App() {
         if (blocked || gameOver) return void 0;
         setBlocked(true);
         if (direction) {
-            const {newTiles, scoreDelta} = move(direction, tiles);
+            const { newTiles, scoreDelta } = move(direction, tiles);
             if (scoreDelta) {
                 setScore((oldState) => oldState + scoreDelta)
             }
@@ -56,10 +51,13 @@ function App() {
                 setTiles(newTiles);
 
                 setTimeout(() => {
-                    if (tiles.length >= gridSize ** 2 && checkGameOver(newTiles)) {
+                    if (checkGameOver(newTiles)) {
                         setGameOver(true)
                     } else {
-                        setTiles(oldState => [...oldState.filter(({toRemove}) => !toRemove), generateTile(newTiles, gridSize)]);
+                        setTiles(oldState => [
+                            ...oldState.filter(({ toRemove }) => !toRemove),
+                            generateTile(newTiles, 4)
+                        ]);
                         setBlocked(false)
                     }
                 }, TRANSITION_TIMER)
@@ -71,7 +69,9 @@ function App() {
         }
     };
 
-    const mobileSwipeHandlers = useSwipeable({onSwiped: (eventData) => void handleAction(eventData.dir as Direction)});
+    const mobileSwipeHandlers = useSwipeable({
+        onSwiped: (eventData) => void handleAction(eventData.dir as Direction)
+    });
 
     const onKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
         const direction = getKeyboardMoveDirection(event);
@@ -79,27 +79,28 @@ function App() {
         if (direction) handleAction(direction)
     };
 
-
     return (
         <div
             className="App"
-            onKeyDown={onKeyDown}
-            tabIndex={0}
-            {...mobileSwipeHandlers}
+            onKeyDown={ onKeyDown }
+            tabIndex={ 0 }
+            { ...mobileSwipeHandlers }
         >
-            <Score score={String(score)}/>
+            <Score score={ String(score) }/>
             <Grid
-                showInstructions={showInstructions}
-                closeInstructions={toggleInstructions}
-                gameOver={gameOver}
-                resetGame={resetGame}
-                colorPalette={colorPalette}
-                tiles={tiles}
-                gridSize={gridSize}
+                showInstructions={ showInstructions }
+                closeInstructions={ toggleInstructions }
+                gameOver={ gameOver }
+                resetGame={ resetGame }
+                colorPalette={ colorPalette }
+                tiles={ tiles }
+                gridSize={ 4 }
             />
-            <Anchor onClick={toggleInstructions}>How to play</Anchor>
-            <ResetGame onReset={resetGame}/>
-            <ColorPalette toggle={toggleColor}/>
+            <Anchor onClick={ toggleInstructions }>
+                How to play
+            </Anchor>
+            <ResetGame onReset={ resetGame } />
+            <ColorPalette toggle={ toggleColor } />
         </div>
     );
 }

@@ -1,6 +1,6 @@
 import blankTiles from "../blankTiles";
 import isEqual from 'lodash.isequal';
-import {ITile} from "../../@types/Tile";
+import { ITile } from "../../types/Tile";
 import generateTile from "../generateTile";
 
 describe('lib/startGame', () => {

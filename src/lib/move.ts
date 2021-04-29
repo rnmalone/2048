@@ -1,9 +1,15 @@
-import {IPosition, ITile} from "../@types/Tile";
-import {Direction} from "./getKeyboardMoveDirection";
-import {sortTiles} from "./index";
+import { IPosition, ITile } from "../types/Tile";
+import { Direction } from "./getKeyboardMoveDirection";
+import { sortTiles } from "./index";
 import reorderTiles from "./reorderTiles";
 
 
+/**
+ * Moves the grid tiles in the given direction
+ *
+ * @param direction
+ * @param grid
+ */
 export default function move(direction: Direction, grid: ITile[]) {
     let scoreDelta = 0;
     const positionKey: keyof IPosition = (direction === Direction.Up || direction === Direction.Down) ? 'y' : 'x';
@@ -92,5 +98,5 @@ export default function move(direction: Direction, grid: ITile[]) {
 
     const reorderedTiles = reorderTiles(grid, newTiles);
 
-    return {newTiles: reorderedTiles, scoreDelta}
+    return { newTiles: reorderedTiles, scoreDelta }
 }

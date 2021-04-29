@@ -1,5 +1,4 @@
-import {Key} from "../@types/Key";
-import {KeyboardEvent} from "react";
+import { KeyboardEvent } from "react";
 
 export enum Direction {
     Up = 'Up',
@@ -8,20 +7,25 @@ export enum Direction {
     Right = 'Right'
 }
 
-export default function getKeyboardMoveDirection(event: KeyboardEvent<HTMLDivElement>) {
-    if (event.which === Key.S || event.which === Key.Down) {
+/**
+ * Checks the KeyboardEvent was a valid move
+ *
+ * @param event
+ */
+export default function getKeyboardMoveDirection(event: KeyboardEvent<HTMLDivElement>): Direction | undefined {
+    if (event.key.toUpperCase() === 'S' || event.key === 'ArrowDown') {
         return Direction.Down
     }
 
-    if (event.which === Key.W || event.which === Key.Up) {
+    if (event.key.toUpperCase() === 'W' || event.key === 'ArrowUp') {
         return Direction.Up
     }
 
-    if (event.which === Key.D || event.which === Key.Right) {
+    if (event.key.toUpperCase() === 'D' || event.key === 'ArrowRight') {
         return Direction.Right
     }
 
-    if (event.which === Key.A || event.which === Key.Left) {
+    if (event.key.toUpperCase() === 'A' || event.key === 'ArrowLeft') {
         return Direction.Left
     }
 

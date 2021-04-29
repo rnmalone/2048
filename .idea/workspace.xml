@@ -2,10 +2,54 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="95160301-fcac-420b-a797-b8772d1b05c8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/orderTiles.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/types/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/@types/Color.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/@types/Key.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/@types/Move.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/Move.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/@types/Tile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/Tile.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Anchor/Anchor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Anchor/Anchor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Anchor/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Anchor/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ColorPalette/ColorPalette.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ColorPalette/ColorPalette.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ColorPalette/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ColorPalette/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GameOver/GameOver.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GameOver/GameOver.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GameOver/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GameOver/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Grid/Grid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Grid/Grid.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Grid/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Grid/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Instructions/Instructions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Instructions/Instructions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Instructions/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Instructions/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ResetGame/ResetGame.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ResetGame/ResetGame.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ResetGame/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ResetGame/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Score/Score.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Score/Score.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Score/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Score/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Tile/Tile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tile/Tile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Tile/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Tile/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/__test__/checkGameOver.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/__test__/checkGameOver.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/__test__/generateTile.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/__test__/generateTile.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/__test__/move.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/__test__/move.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/blankTiles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/blankTiles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/checkGameOver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/checkGameOver.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/generateTile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/generateTile.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/getKeyboardMoveDirection.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/getKeyboardMoveDirection.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/hooks/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/hooks/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/hooks/useOutsideClicks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/hooks/useOutsideClicks.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/hooks/useScore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/hooks/useScore.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/move.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/move.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/onUse.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/onUse.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/reorderTiles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/reorderTiles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/sortTiles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/sortTiles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/startGame.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/startGame.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/serviceWorker.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/serviceWorker.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setupTests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupTests.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/template/tile.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/template/tile.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,11 +89,13 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Rorym\Documents\2048\src\styles\typography" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Rorym\Documents\2048\config" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Rory Malone\Documents\2048\src" />
+      <recent name="C:\Users\Rory Malone\Documents\2048\types" />
+      <recent name="C:\Users\Rorym\Documents\2048\src\styles\typography" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -83,7 +129,8 @@
       <workItem from="1599578870909" duration="3765000" />
       <workItem from="1599668892518" duration="18020000" />
       <workItem from="1619467149045" duration="779000" />
-      <workItem from="1619628339861" duration="752000" />
+      <workItem from="1619628339861" duration="8832000" />
+      <workItem from="1619713280358" duration="3150000" />
     </task>
     <servers />
   </component>

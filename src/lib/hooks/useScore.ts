@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
 export default function useScore() {
     const [score, setScore] = useState<number>(0);
@@ -14,10 +14,10 @@ export default function useScore() {
 
     useEffect(() => {
         if (score > highScore) {
-            localStorage.setItem('2048-game-hs', `${score}`);
+            localStorage.setItem('2048-game-hs', `${ score }`);
             setHighScore(score)
         }
     }, [score]);
 
-    return {score, setScore, highScore}
+    return { score, setScore, highScore }
 }

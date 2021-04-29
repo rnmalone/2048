@@ -1,6 +1,15 @@
-import {ITile} from "../@types/Tile";
-import {v4} from 'uuid'
+import { ITile } from "../types/Tile";
+import { v4 } from 'uuid'
 
+
+/**
+ * Generates a new tile in a random unfilled position.
+ *
+ * This makes a new tile appear after a move has been made.
+ *
+ * @param tiles
+ * @param gridSize
+ */
 export default function generateTile(tiles: ITile[], gridSize: number) {
     const random = () => Math.floor(Math.random() * gridSize);
     let newCoord = {

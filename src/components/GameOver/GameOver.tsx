@@ -6,7 +6,7 @@ interface IGameOver {
     onReset(): void;
 }
 
-export default function GameOver({onReset}: IGameOver) {
+export default function GameOver({ onReset }: IGameOver) {
     return (
         <div className="GameOver">
             <h1>game over</h1>

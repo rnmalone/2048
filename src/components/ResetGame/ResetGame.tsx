@@ -1,14 +1,14 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import cx from 'classnames'
+import Anchor from "../Anchor";
 
 import './ResetGame.scss';
-import Anchor from "../Anchor";
 
 interface IResetGame {
     onReset(): void;
 }
 
-export default function ResetGame({onReset}: IResetGame) {
+export default function ResetGame({ onReset }: IResetGame) {
     const [showWarning, setShowWarning] = useState(false);
 
     const toggleWarning = (newState: boolean) => () => setShowWarning(newState);
@@ -19,12 +19,12 @@ export default function ResetGame({onReset}: IResetGame) {
 
     return (
         <div className="ResetGame">
-            <Anchor onClick={toggleWarning(true)}>new game</Anchor>
-            <div className={cx('ResetGame__options', {
+            <Anchor onClick={ toggleWarning(true) }>new game</Anchor>
+            <div className={ cx('ResetGame__options', {
                 'ResetGame__options--hide': !showWarning
-            })}>
-                <Anchor onClick={toggleWarning(false)}>cancel</Anchor>
-                <Anchor onClick={resetGame}>confirm</Anchor>
+            }) }>
+                <Anchor onClick={ toggleWarning(false) }>cancel</Anchor>
+                <Anchor onClick={ resetGame }>confirm</Anchor>
             </div>
         </div>
     )

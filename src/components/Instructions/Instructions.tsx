@@ -1,5 +1,5 @@
-import React, {useCallback, useRef} from 'react';
-import {useOutsideClicks} from "../../lib/hooks";
+import React, { useRef } from 'react';
+import { useOutsideClicks } from "../../lib/hooks";
 
 import './Instructions.scss';
 
@@ -7,14 +7,13 @@ interface IInstructions {
     onClose(): void
 }
 
-export default function Instructions({onClose}: IInstructions) {
+export default function Instructions({ onClose }: IInstructions) {
     const ref = useRef(null);
 
-    const handleClose = useCallback(onClose, []);
-    useOutsideClicks(ref, handleClose);
+    useOutsideClicks(ref, onClose);
 
     return (
-        <div ref={ref} className="Instructions">
+        <div ref={ ref } className="Instructions">
             <h6>How to Play</h6>
             <p>Move the tiles in a direction with the <b>arrow keys or WASD</b> or swipe on mobile. A new tile will
                 appear with each move.</p>

@@ -1,12 +1,11 @@
-import React, {CSSProperties, useCallback, useEffect, useRef, useState} from 'react';
-import cx from 'classnames';
-import './Tile.scss';
-import {Color} from "../../@types/Color";
-import {CSSTransition, SwitchTransition} from 'react-transition-group';
+import React, { CSSProperties, useCallback, useEffect, useRef, useState } from 'react';
+import { CSSTransition, SwitchTransition } from 'react-transition-group';
 import { TRANSITION_TIMER } from "../../app.config";
 
+import './Tile.scss';
+
 interface ITileComponent {
-    colorPalette: Color;
+    colorPalette: string;
     value: number;
     x: number;
     y: number;
@@ -14,17 +13,23 @@ interface ITileComponent {
 }
 
 export default function Tile({
-    colorPalette,
-    value,
-    x,
-    y,
-    toRemove
-}: ITileComponent) {
+                                 colorPalette,
+                                 value,
+                                 x,
+                                 y,
+                                 toRemove
+                             }: ITileComponent) {
+    const [transition, setTransition] = useState('opacity .2s ease-in-out')
     const [style, setStyle] = useState<CSSProperties>(Object.create(null));
-    const requestRef = useRef(null);
+    const requestRef = useRef<number | null>(null)
+
+    useEffect(() => {
+        setTransition('all .2s ease-in-out')
+    }, [])
 
     const calcStyle = () => void setStyle({
-        transform: `translate(${x * 100}%, ${y * 100}%)`,
+        transition: transition,
+        transform: `translate(${ x * 100 }%, ${ y * 100 }%)`,
         zIndex: toRemove ? 0 : 10,
     });
 
@@ -33,27 +38,22 @@ export default function Tile({
     }, []);
 
     useEffect(() => {
-        // @ts-ignore
         requestRef.current = requestAnimationFrame(calcStyle);
 
         return () => cancelAnimationFrame(requestRef.current!)
     }, [x, y]);
 
     return (
-        <div style={style} className="tile-container">
-            <div className={cx('Tile', {
-                [`Tile--warm-${value}`]: colorPalette === Color.Warm,
-                [`Tile--cold-${value}`]: colorPalette === Color.Cold,
-                [`Tile--forest-${value}`]: colorPalette === Color.Forest,
-            })}>
+        <div style={ style } className="tile-container">
+            <div className={`Tile Tile--${colorPalette}-${value}`}>
                 <SwitchTransition mode="out-in">
                     <CSSTransition
-                        key={value}
-                        timeout={TRANSITION_TIMER}
-                        addEndListener={endListener()}
+                        key={ value }
+                        timeout={ TRANSITION_TIMER }
+                        addEndListener={ endListener() }
                         classNames="Tile__content"
                     >
-                        <p>{value}</p>
+                        <p>{ value }</p>
                     </CSSTransition>
                 </SwitchTransition>
             </div>

@@ -1,18 +1,17 @@
 import React from 'react';
-import {IPosition, ITile} from '../../@types/Tile';
-
-import './Grid.scss';
+import { IPosition, ITile } from '../../types/Tile';
 import Tile from "../Tile";
-import {CSSTransition, TransitionGroup} from "react-transition-group";
-import {Color} from '../../@types/Color';
-import {blankTiles} from '../../lib';
+import { CSSTransition, TransitionGroup } from "react-transition-group";
+import { blankTiles } from '../../lib';
 import GameOver from "../GameOver/GameOver";
 import Instructions from "../Instructions";
 import { TRANSITION_TIMER } from "../../app.config";
 
+import './Grid.scss';
+
 export interface IGrid {
     tiles: ITile[];
-    colorPalette: Color;
+    colorPalette: string;
     gridSize: number;
     gameOver: boolean;
     showInstructions: boolean;
@@ -23,23 +22,22 @@ export interface IGrid {
 }
 
 
-export default function Grid({gameOver, tiles, colorPalette, resetGame, showInstructions, closeInstructions}: IGrid) {
-    const getTileStyle = ({x, y}: IPosition) => {
+export default function Grid({ gameOver, tiles, colorPalette, resetGame, showInstructions, closeInstructions }: IGrid) {
+    const getTileStyle = ({ x, y }: IPosition) => {
         return {
-            transform: `translate(${x * 100}%, ${y * 100}%)`
+            transform: `translate(${ x * 100 }%, ${ y * 100 }%)`
         }
     };
 
     return (
         <section className="Grid">
-            {gameOver && <GameOver onReset={resetGame}/>}
-            {showInstructions && <Instructions onClose={closeInstructions}/>}
+            { gameOver && <GameOver onReset={ resetGame }/> }
+            { showInstructions && <Instructions onClose={ closeInstructions }/> }
             {
                 blankTiles.map((item: Partial<ITile>, i: number) => (
-                    <div style={getTileStyle(item.coord!)} className="tile-container">
+                    <div style={ getTileStyle(item.coord!) } className="tile-container">
                         <div
-                            key={`blank-${i}`}
-
+                            key={ `blank-${ i }` }
                             className="Grid__empty-cell"
                         />
                     </div>))
@@ -53,16 +51,16 @@ export default function Grid({gameOver, tiles, colorPalette, resetGame, showInst
                                    toRemove
                                }) => (
                         <CSSTransition
-                            key={id}
-                            timeout={TRANSITION_TIMER}
+                            key={ id }
+                            timeout={ TRANSITION_TIMER }
                             classNames="Tile"
                         >
                             <Tile
-                                colorPalette={colorPalette}
-                                key={id}
-                                value={value}
-                                toRemove={toRemove}
-                                {...coord}
+                                colorPalette={ colorPalette }
+                                key={ id }
+                                value={ value }
+                                toRemove={ toRemove }
+                                { ...coord }
                             />
                         </CSSTransition>
                     ))
