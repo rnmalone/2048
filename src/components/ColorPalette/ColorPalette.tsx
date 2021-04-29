@@ -11,7 +11,7 @@ export default function ColorPalette({ toggle }: IColorPalette) {
     return (
         <div className="ColorPalette">
             {
-                APP_COLOR_THEMES.map(( value, i: number) => (
+                APP_COLOR_THEMES.map((value, i: number) => (
                     <span
                         aria-label={ `button-change-color-${ value }` }
                         key={ `${ value }-${ i }` }

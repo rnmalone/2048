@@ -45,7 +45,7 @@ export default function Tile({
 
     return (
         <div style={ style } className="tile-container">
-            <div className={`Tile Tile--${colorPalette}-${value}`}>
+            <div className={ `Tile Tile--${ colorPalette }-${ value }` }>
                 <SwitchTransition mode="out-in">
                     <CSSTransition
                         key={ value }

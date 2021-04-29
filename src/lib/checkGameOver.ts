@@ -13,7 +13,7 @@ export default function checkGameOver(input: ITile[]): boolean {
     let canMove = tiles.length < 16;
 
     let i = 0
-    while(!canMove) {
+    while (!canMove) {
         const offset = i > 0 ? (i * 4) - 1 : 0;
 
         canMove = (
@@ -28,7 +28,7 @@ export default function checkGameOver(input: ITile[]): boolean {
         )
         i++;
 
-        if(i === 3) break;
+        if (i === 3) break;
     }
 
     return !canMove

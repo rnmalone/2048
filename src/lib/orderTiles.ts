@@ -7,10 +7,10 @@ import { ITile } from "../types";
  */
 export default function orderTiles(tiles: ITile[]) {
     return tiles.sort((a: ITile, b: ITile) => {
-         if(a.coord.x === b.coord.x) {
-             return a.coord.y - b.coord.y
-         }
+        if (a.coord.x === b.coord.x) {
+            return a.coord.y - b.coord.y
+        }
 
-         return a.coord.x - b.coord.x
+        return a.coord.x - b.coord.x
     })
 }

@@ -6,7 +6,7 @@ import { useScore } from "./lib/hooks";
 import { useSwipeable } from 'react-swipeable'
 import { Direction } from "./lib/getKeyboardMoveDirection";
 import { APP_COLOR_THEMES, TRANSITION_TIMER } from "./app.config";
-import { Score, Grid, Anchor, ResetGame, ColorPalette } from './components';
+import { Anchor, ColorPalette, Grid, ResetGame, Score } from './components';
 
 function App() {
     const [showInstructions, setShowInstructions] = useState<boolean>(false);
@@ -24,7 +24,7 @@ function App() {
         if (retrievedGame) {
             const parsed = JSON.parse(retrievedGame);
 
-            if(parsed?.tiles) {
+            if (parsed?.tiles) {
                 const tiles = parsed.tiles.filter((tile: ITile) => !tile?.toRemove)
                 setScore(parsed.score);
                 setTiles(tiles)
@@ -102,8 +102,8 @@ function App() {
             <Anchor onClick={ toggleInstructions }>
                 How to play
             </Anchor>
-            <ResetGame onReset={ resetGame } />
-            <ColorPalette toggle={ toggleColor } />
+            <ResetGame onReset={ resetGame }/>
+            <ColorPalette toggle={ toggleColor }/>
         </div>
     );
 }
