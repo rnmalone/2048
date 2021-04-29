@@ -1,4 +1,4 @@
-import { ITile } from "../types/Tile";
+import { ITile } from "../types";
 import orderTiles from "./orderTiles";
 
 /**
@@ -9,27 +9,27 @@ import orderTiles from "./orderTiles";
  * @param input
  */
 export default function checkGameOver(input: ITile[]): boolean {
-    const tiles = input
-
+    const tiles = orderTiles(input)
     let canMove = tiles.length < 16;
 
     let i = 0
     while(!canMove) {
         const offset = i > 0 ? (i * 4) - 1 : 0;
-        try {
-            canMove = (
-                /** x **/ tiles[i + offset]?.value === (i < 4 ? tiles[i + offset + 4]?.value : -1) ||
-                /** y **/ tiles[i + offset]?.value === (i < 4 ? tiles[i + offset + 1]?.value : -1)
-            )
-        } finally {
-            i++;
-        }
 
-        if(i === 4) break;
+        canMove = (
+            tiles[i + offset]?.value === (i < 4 ? tiles[i + offset + 4]?.value : -1) ||
+            tiles[i + offset + 1]?.value === (i < 4 ? tiles[i + offset + 4 + 1]?.value : -1) ||
+            tiles[i + offset + 2]?.value === (i < 4 ? tiles[i + offset + 4 + 2]?.value : -1) ||
+            tiles[i + offset + 3]?.value === (i < 4 ? tiles[i + offset + 4 + 3]?.value : -1) ||
+            tiles[i + offset]?.value === (i < 4 ? tiles[i + offset + 1]?.value : -1) ||
+            tiles[i + offset + 1]?.value === (i < 4 ? tiles[i + offset + 1 + 1]?.value : -1) ||
+            tiles[i + offset + 2]?.value === (i < 4 ? tiles[i + offset + 1 + 2]?.value : -1) ||
+            tiles[i + offset + 3]?.value === (i < 4 ? tiles[i + offset + 1 + 3]?.value : -1)
+        )
+        i++;
+
+        if(i === 3) break;
     }
-
-    console.log(tiles)
-
 
     return !canMove
 }

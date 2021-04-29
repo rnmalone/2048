@@ -23,14 +23,21 @@ function App() {
 
         if (retrievedGame) {
             const parsed = JSON.parse(retrievedGame);
-            setScore(parsed.score);
-            setTiles(parsed.tiles)
-            setGameOver(checkGameOver(parsed.tiles))
+
+            if(parsed?.tiles) {
+                const tiles = parsed.tiles.filter((tile: ITile) => !tile?.toRemove)
+                setScore(parsed.score);
+                setTiles(tiles)
+                setGameOver(checkGameOver(tiles))
+            }
         }
     }, []);
 
     useEffect(() => {
-        localStorage.setItem('2048-game', JSON.stringify({ score, tiles }))
+        localStorage.setItem('2048-game', JSON.stringify({ score, tiles }));
+        if (checkGameOver(tiles)) {
+            setGameOver(true)
+        }
     }, [tiles]);
 
     const resetGame = () => {
@@ -51,15 +58,11 @@ function App() {
                 setTiles(newTiles);
 
                 setTimeout(() => {
-                    if (checkGameOver(newTiles)) {
-                        setGameOver(true)
-                    } else {
-                        setTiles(oldState => [
-                            ...oldState.filter(({ toRemove }) => !toRemove),
-                            generateTile(newTiles, 4)
-                        ]);
-                        setBlocked(false)
-                    }
+                    setTiles(oldState => [
+                        ...oldState.filter(({ toRemove }) => !toRemove),
+                        generateTile(newTiles, 4)
+                    ]);
+                    setBlocked(false)
                 }, TRANSITION_TIMER)
             } else {
                 setBlocked(false)
