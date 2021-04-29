@@ -13,7 +13,7 @@ describe('lib/checkGameOver', () => {
         expect(checkGameOver(board)).toBe(false)
     })
 
-    test('Should return false if all positions filled but two adjacent numbers of same value exist', () => {
+    test('Should return false if all positions filled but two adjacent numbers of same value exist (x)', () => {
         const board = [
             {
                 "id": "b525b9ed-f8c9-445f-a58c-0cf32b01e188",

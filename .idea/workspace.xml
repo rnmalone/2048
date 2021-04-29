@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="95160301-fcac-420b-a797-b8772d1b05c8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/__test__/checkGameOver.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/__test__/checkGameOver.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/checkGameOver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/checkGameOver.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +85,7 @@
       <workItem from="1599668892518" duration="18020000" />
       <workItem from="1619467149045" duration="779000" />
       <workItem from="1619628339861" duration="8832000" />
-      <workItem from="1619713280358" duration="9939000" />
+      <workItem from="1619713280358" duration="14338000" />
     </task>
     <servers />
   </component>
