@@ -2,10 +2,10 @@ import { ITile } from "../types";
 import orderTiles from "./orderTiles";
 
 /**
- * Checks if the tiles can be moved again
+ * Iterates through the tiles to see if the tile at the next x/y position has the same value
  *
- * If not then the game is over
- *
+ * If there is a match then another move can be made and the game continues
+ **
  * @param input
  */
 export default function checkGameOver(input: ITile[]): boolean {
@@ -13,10 +13,13 @@ export default function checkGameOver(input: ITile[]): boolean {
         return false
     }
 
-    const tiles = orderTiles(input)
-    if (tiles.length < 16) {
+    // Board is not filled
+    if (input.length < 16) {
         return false
     }
+
+    const tiles = orderTiles(input)
+
 
     return !tiles.some(({ value }, i, arr) => {
         const xPrev = i - 1;
