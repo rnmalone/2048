@@ -1,17 +1,21 @@
 import React, { KeyboardEvent, useEffect, useState } from 'react';
 import isEqual from 'lodash.isequal';
-import { ITile } from "./types/Tile";
-import { checkGameOver, generateTile, getKeyboardMoveDirection, move, startGame } from "./lib";
+import { ITile } from "./types";
+import { generateTile, getKeyboardMoveDirection, move, startGame } from "./lib";
 import { useScore } from "./lib/hooks";
 import { useSwipeable } from 'react-swipeable'
 import { Direction } from "./lib/getKeyboardMoveDirection";
-import { APP_COLOR_THEMES, TRANSITION_TIMER } from "./app.config";
-import { Anchor, ColorPalette, Grid, ResetGame, Score } from './components';
+import { APP_COLOR_THEMES, LOCAL_STORAGE_KEY, TRANSITION_TIMER } from "./app.config";
+import { Button, ColorPalette, GameWon, Grid, ResetGame, Score } from './components';
+import getGameStatus, { GameStatus } from "./lib/getGameStatus";
+import GameOver from "./components/GameOver";
+import Instructions from "./components/Instructions";
 
 function App() {
     const [showInstructions, setShowInstructions] = useState<boolean>(false);
+    const [status, setStatus] = useState<GameStatus>(GameStatus.Playing);
+    const [keepPlaying, setKeepPlaying] = useState<boolean>(false);
     const [blocked, setBlocked] = useState<boolean>(false);
-    const [gameOver, setGameOver] = useState<boolean>(false);
     const [colorPalette, setPalette] = useState<string>(APP_COLOR_THEMES[0]);
     const { score, setScore, highScore } = useScore();
     const toggleColor = (color: string) => () => void setPalette(color);
@@ -19,7 +23,7 @@ function App() {
     const [tiles, setTiles] = useState<ITile[]>(startGame());
 
     useEffect(() => {
-        const retrievedGame: string | null = localStorage.getItem('2048-game');
+        const retrievedGame: string | null = localStorage.getItem(LOCAL_STORAGE_KEY);
 
         if (retrievedGame) {
             const parsed = JSON.parse(retrievedGame);
@@ -28,26 +32,24 @@ function App() {
                 const tiles = parsed.tiles.filter((tile: ITile) => !tile?.toRemove)
                 setScore(parsed.score);
                 setTiles(tiles)
-                setGameOver(checkGameOver(tiles))
+                setStatus(getGameStatus(tiles, keepPlaying))
             }
         }
     }, []);
 
     useEffect(() => {
-        localStorage.setItem('2048-game', JSON.stringify({ score, tiles }));
-        if (checkGameOver(tiles)) {
-            setGameOver(true)
-        }
+        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify({ score, tiles }));
+        setStatus(getGameStatus(tiles, keepPlaying))
     }, [tiles]);
 
     const resetGame = () => {
         setScore(0);
-        setGameOver(false);
+        setStatus(GameStatus.Playing);
         setTiles(startGame())
     };
 
     const handleAction = (direction: Direction) => {
-        if (blocked || gameOver) return void 0;
+        if (blocked || status === GameStatus.Failed) return void 0;
         setBlocked(true);
         if (direction) {
             const { newTiles, scoreDelta } = move(direction, tiles);
@@ -82,6 +84,31 @@ function App() {
         if (direction) handleAction(direction)
     };
 
+    const continueGame = () => {
+        setKeepPlaying(true)
+    }
+
+    const renderGameStatus = () => {
+        if(status === GameStatus.Failed) {
+            return <GameOver onReset={ resetGame }/>
+        }
+
+        if(status === GameStatus.Won && !keepPlaying) {
+            return (
+                <GameWon
+                    visible={status === GameStatus.Won}
+                    close={continueGame}
+                />
+            )
+        }
+
+        return null;
+    }
+
+    const renderInstructions = () => {
+        return  showInstructions ? <Instructions onClose={ toggleInstructions }/> : null
+    }
+
     return (
         <div
             className="App"
@@ -91,17 +118,20 @@ function App() {
         >
             <Score score={ String(score) }/>
             <Grid
-                showInstructions={ showInstructions }
-                closeInstructions={ toggleInstructions }
-                gameOver={ gameOver }
-                resetGame={ resetGame }
+                renderInstructions={renderInstructions}
+                renderGameStatus={renderGameStatus}
                 colorPalette={ colorPalette }
                 tiles={ tiles }
-                gridSize={ 4 }
             />
-            <Anchor onClick={ toggleInstructions }>
+            <span className="App__high-score">
+                {`Highest: ${highScore}`}
+            </span>
+            <Button
+                label="instructions"
+                onClick={ toggleInstructions }
+            >
                 How to play
-            </Anchor>
+            </Button>
             <ResetGame onReset={ resetGame }/>
             <ColorPalette toggle={ toggleColor }/>
         </div>

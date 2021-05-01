@@ -1,7 +1,7 @@
 @import 'core/vars';
 @import 'typography/text';
 @import 'fonts/Rajdhani.scss';
-
+@import 'template/visibility';
 
 #root {
   max-height: 100vh;
@@ -12,7 +12,6 @@
 body {
   background: $background;
 
-  font-family: Rajdhani;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,6 +36,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  &__high-score {
+    font-size: .8em;
+    margin-bottom: 1rem;
   }
 }
 

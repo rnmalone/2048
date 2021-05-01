@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { LOCAL_STORAGE_KEY } from "../../app.config";
 
 export default function useScore() {
     const [score, setScore] = useState<number>(0);
@@ -14,7 +15,7 @@ export default function useScore() {
 
     useEffect(() => {
         if (score > highScore) {
-            localStorage.setItem('2048-game-hs', `${ score }`);
+            localStorage.setItem(LOCAL_STORAGE_KEY + '-hs', `${ score }`);
             setHighScore(score)
         }
     }, [score]);

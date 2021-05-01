@@ -11,6 +11,7 @@
   &__empty-cell {
     @extend .tile-template;
     background: $background;
+    border: #333333 1px solid;
   }
 
   /*

@@ -6,3 +6,5 @@ export { default as Instructions } from './Instructions';
 export { default as ResetGame } from './ResetGame';
 export { default as Score } from './Score';
 export { default as Tile } from './Tile';
+export { default as Button } from './Button';
+export { default as GameWon } from './GameWon';

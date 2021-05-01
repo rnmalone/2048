@@ -1,0 +1,12 @@
+.visibility {
+  transition: opacity .2s linear;
+  opacity: 0;
+
+  &--hidden {
+    opacity: 0;
+  }
+
+  &--visible {
+    opacity: 1;
+  }
+}

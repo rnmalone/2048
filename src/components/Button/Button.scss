@@ -1,0 +1,12 @@
+@import 'core/vars';
+
+button {
+  background-color: transparent;
+  border: unset;
+  cursor: pointer;
+  transition: color .2s linear;
+
+  &:hover, &:focus {
+    color: $text-hover;
+  }
+}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import cx from 'classnames'
 import Anchor from "../Anchor";
+import Button from "../Button";
 
 import './ResetGame.scss';
 
@@ -19,12 +20,27 @@ export default function ResetGame({ onReset }: IResetGame) {
 
     return (
         <div className="ResetGame">
-            <Anchor onClick={ toggleWarning(true) }>new game</Anchor>
+            <Button
+                label="reset game"
+                onClick={ toggleWarning(true) }
+            >
+                new game
+            </Button>
             <div className={ cx('ResetGame__options', {
                 'ResetGame__options--hide': !showWarning
             }) }>
-                <Anchor onClick={ toggleWarning(false) }>cancel</Anchor>
-                <Anchor onClick={ resetGame }>confirm</Anchor>
+                <Button
+                    label="cancel"
+                    onClick={ toggleWarning(false) }
+                >
+                    cancel
+                </Button>
+                <Button
+                    label="confirm"
+                    onClick={ resetGame }
+                >
+                    confirm
+                </Button>
             </div>
         </div>
     )

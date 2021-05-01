@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { IPosition, ITile } from '../../types/Tile';
 import Tile from "../Tile";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { blankTiles } from '../../lib';
-import GameOver from "../GameOver/GameOver";
-import Instructions from "../Instructions";
+
 import { TRANSITION_TIMER } from "../../app.config";
 
 import './Grid.scss';
@@ -12,17 +11,17 @@ import './Grid.scss';
 export interface IGrid {
     tiles: ITile[];
     colorPalette: string;
-    gridSize: number;
-    gameOver: boolean;
-    showInstructions: boolean;
-
-    resetGame(): void;
-
-    closeInstructions(): void;
+    renderInstructions(): ReactElement | null;
+    renderGameStatus(): ReactElement | null;
 }
 
 
-export default function Grid({ gameOver, tiles, colorPalette, resetGame, showInstructions, closeInstructions }: IGrid) {
+export default function Grid({
+                                 tiles,
+                                 colorPalette,
+                                 renderInstructions,
+                                 renderGameStatus
+}: IGrid) {
     const getTileStyle = ({ x, y }: IPosition) => {
         return {
             transform: `translate(${ x * 100 }%, ${ y * 100 }%)`
@@ -31,8 +30,8 @@ export default function Grid({ gameOver, tiles, colorPalette, resetGame, showIns
 
     return (
         <section className="Grid">
-            { gameOver && <GameOver onReset={ resetGame }/> }
-            { showInstructions && <Instructions onClose={ closeInstructions }/> }
+            {renderGameStatus()}
+            {renderInstructions()}
             {
                 blankTiles.map((item: Partial<ITile>, i: number) => (
                     <div style={ getTileStyle(item.coord!) } className="tile-container">

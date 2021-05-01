@@ -2,6 +2,7 @@ import React from 'react';
 import { APP_COLOR_THEMES } from "../../app.config";
 
 import './ColorPalette.scss';
+import { onUse } from "../../lib";
 
 interface IColorPalette {
     toggle(newColor: string): () => void
@@ -17,7 +18,7 @@ export default function ColorPalette({ toggle }: IColorPalette) {
                         key={ `${ value }-${ i }` }
                         role="button"
                         tabIndex={ 0 }
-                        onClick={ toggle(value) }
+                        {...onUse(toggle(value))}
                         className={ `ColorPalette__color ColorPalette__color--${ value }` }
                     />
                 ))
