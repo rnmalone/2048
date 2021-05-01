@@ -2,24 +2,25 @@
 
 @keyframes _appear {
   from {
-    transform: translate(0, 20%);
+    transform: translate(-50%, -30%);
     opacity: 0;
   }
   to {
     opacity: 1;
-    transform: translate(0, 0);
+    transform: translate(-50%, -50%);
   }
 }
 
 
 .GameOver {
-  top: 25%;
-  left: 25%;
   position: absolute;
+  top: 50%;
+  left: 50%;
   width: 50%;
   height: 50%;
   border-radius: 50%;
-  background-color: $bg-color;
+  transform: translate(-50%, -50%);
+  background: $background;
   display: flex;
   flex-direction: column;
   justify-content: center;
