@@ -10,9 +10,8 @@
 
   &__empty-cell {
     @extend .tile-template;
-    background-color: darken($amount: .9, $color: $bg-color);
+    background: $background;
   }
-
 
   /*
     ##Device = Desktops
