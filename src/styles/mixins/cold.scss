@@ -40,11 +40,15 @@
 
   &--cold-1024 {
     background-color: $cold-1024;
-    color: white;
+    * {
+      color: white;
+    }
   }
 
   &--cold-2048 {
     background-color: $cold-2048;
-    color: white;
+    * {
+      color: white;
+    }
   }
 }

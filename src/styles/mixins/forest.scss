@@ -39,11 +39,16 @@
 
   &--forest-1024 {
     background-color: $forest-1024;
-    color: white;
+    * {
+      color: white;
+    }
   }
 
   &--forest-2048 {
     background-color: $forest-2048;
-    color: white;
+
+    * {
+      color: white;
+    }
   }
 }
