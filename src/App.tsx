@@ -10,6 +10,7 @@ import { Button, ColorPalette, GameWon, Grid, ResetGame, Score } from './compone
 import getGameStatus, { GameStatus } from "./lib/getGameStatus";
 import GameOver from "./components/GameOver";
 import Instructions from "./components/Instructions";
+import NewGame from "./components/NewGame";
 
 function App() {
     const [showInstructions, setShowInstructions] = useState<boolean>(false);
@@ -21,6 +22,8 @@ function App() {
     const toggleColor = (color: string) => () => void setPalette(color);
     const toggleInstructions = () => void setShowInstructions(oldState => !oldState);
     const [tiles, setTiles] = useState<ITile[]>(startGame());
+    const [showGameReset, setShowGameReset] = useState<boolean>(false)
+    const toggleGameReset = () => setShowGameReset(s => !s)
 
     useEffect(() => {
         const retrievedGame: string | null = localStorage.getItem(LOCAL_STORAGE_KEY);
@@ -46,6 +49,7 @@ function App() {
         setScore(0);
         setStatus(GameStatus.Playing);
         setTiles(startGame())
+        setShowGameReset(false)
     };
 
     const handleAction = (direction: Direction) => {
@@ -96,7 +100,6 @@ function App() {
         if(status === GameStatus.Won && !keepPlaying) {
             return (
                 <GameWon
-                    visible={status === GameStatus.Won}
                     close={continueGame}
                 />
             )
@@ -126,14 +129,26 @@ function App() {
             <span className="App__high-score">
                 {`Highest: ${highScore}`}
             </span>
-            <Button
-                label="instructions"
-                onClick={ toggleInstructions }
-            >
-                How to play
-            </Button>
-            <ResetGame onReset={ resetGame }/>
+            <div className="App__actions">
+                <Button
+                    label="new game"
+                    onClick={toggleGameReset}
+                    >
+                    New Game
+                </Button>
+                <Button
+                    label="instructions"
+                    onClick={ toggleInstructions }
+                >
+                    How to play
+                </Button>
+            </div>
             <ColorPalette toggle={ toggleColor }/>
+            {showGameReset && (<NewGame
+                onContinue={resetGame}
+                onClose={toggleGameReset}/>
+            )}
+
         </div>
     );
 }

@@ -11,13 +11,11 @@
 
 body {
   background: $background;
-
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   margin: 0;
-
   -webkit-box-shadow: $vignette-shadow;
   -moz-box-shadow: $vignette-shadow;
   box-shadow: $vignette-shadow;
@@ -41,6 +39,15 @@ body {
   &__high-score {
     font-size: .8em;
     margin-bottom: 1rem;
+  }
+
+  &__actions {
+
+    @media (min-width: 320px) and (max-width: 2560px) and (max-height: 1920px) and (orientation: portrait) {
+      display: flex;
+      align-items: center;
+      margin-bottom: .5rem;
+    }
   }
 }
 

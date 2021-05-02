@@ -10,10 +10,17 @@
   @include forest;
   @extend .tile-template;
 
-  transition: background-color 200ms linear;
+  transition: background-color $transition-time linear;
 
   p {
-    color: #333333;
+    color: $dark-grey;
+
+    @media screen and (min-width: 320px) {
+        font-size: calc(20px + 6 * ((100vw - 320px) / 680));
+    }
+    @media screen and (min-width: 1000px) {
+        font-size: 24px;
+    }
   }
 
   &-enter {
@@ -22,7 +29,7 @@
 
   &-enter-active {
     opacity: 1;
-    transition: opacity 200ms linear;
+    transition: opacity $transition-time linear;
   }
 
   &-exit {
@@ -31,7 +38,7 @@
 
   &-exit-active {
     opacity: 0;
-    transition: opacity 200ms linear;
+    transition: opacity $transition-time linear;
   }
 
   &__content {
