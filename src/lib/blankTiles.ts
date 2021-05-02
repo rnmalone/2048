@@ -9,6 +9,6 @@ const blankTiles: ITile[] = (Array(4).fill(null).reduce((a, _: any, row) => [
             }
         }))
     ], []
-).map((tile: ITile, i: number) => ({ ...tile, value: i })))
+).map((tile: ITile, i: number) => ({ ...tile, value: i + 1 })))
 
 export default blankTiles;

@@ -13,5 +13,7 @@ export default function getGameStatus(tiles: ITile[], keepPlaying: boolean): Gam
         return GameStatus.Won;
     }
 
+    console.log(checkGameOver(tiles))
+
     return checkGameOver(tiles) ? GameStatus.Failed : GameStatus.Playing;
 }

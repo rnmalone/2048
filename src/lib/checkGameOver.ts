@@ -18,18 +18,26 @@ export default function checkGameOver(input: ITile[]): boolean {
         return false
     }
 
+    console.log(input)
+
     const tiles = orderTiles(input)
 
 
     return !tiles.some(({ value }, i, arr) => {
-        const xPrev = i - 1;
-        const xNext = i + 1;
-        const yPrev = i - 4;
-        const yNext = i + 4;
+        const xPrev = i - 4;
+        const xNext = i + 4;
+        const yPrev = i - 1;
+        const yNext = i + 1;
+
+        console.log(xPrev, xNext, yPrev, yNext,
+            (i % 4 ? arr[xPrev]?.value : 0) === value,
+            (xNext % 4 > 0 ? arr[xNext]?.value : 0) === value,
+            arr[yPrev]?.value === value,
+            arr[yNext]?.value === value)
 
         return (
-            arr[xPrev]?.value === value ||
-            arr[xNext]?.value === value ||
+            (i % 4 ? arr[xPrev]?.value : 0) === value ||
+            (xNext % 4 ? arr[xNext]?.value : 0) === value ||
             arr[yPrev]?.value === value ||
             arr[yNext]?.value === value
         )

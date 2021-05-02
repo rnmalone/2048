@@ -7,10 +7,9 @@ import { ITile } from "../types";
  */
 export default function orderTiles(tiles: ITile[]) {
     return tiles.sort((a: ITile, b: ITile) => {
-        if (a.coord.x === b.coord.x) {
-            return a.coord.y - b.coord.y
-        }
+        const aValue = Number(`${a.coord.x}${a.coord.y}`)
+        const bValue = Number(`${b.coord.x}${b.coord.y}`)
 
-        return a.coord.x - b.coord.x
+        return aValue - bValue
     })
 }
