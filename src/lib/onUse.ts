@@ -9,3 +9,4 @@ export default function onUse(fn: (...args: any) => any) {
         onClick: fn
     }
 }
+
